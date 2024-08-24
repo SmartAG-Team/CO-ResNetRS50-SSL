@@ -1,0 +1,2105 @@
+Epoch 01, Train Loss: 1.1930, Train Acc: 0.5474, LR: 0.010000
+Epoch 01, Val Loss: 1.1306, Val Acc: 0.6220
+Epoch 01, Confusion Matrix:
+[[465  23   0   0   0   0   1]
+ [ 49 432  30   6   0   6   6]
+ [  1 175 212  45   0  60   4]
+ [  0  67 178 311   0  95   6]
+ [  0  12  51 107   0  74   0]
+ [  5  13  22  24   0 232  28]
+ [ 28  26   5  13   0  66 365]]
+Epoch 01, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.85      0.95      0.90       489
+           1       0.58      0.82      0.68       529
+           2       0.43      0.43      0.43       497
+           3       0.61      0.47      0.53       657
+           4       0.00      0.00      0.00       244
+           5       0.44      0.72      0.54       324
+           6       0.89      0.73      0.80       503
+
+    accuracy                           0.62      3243
+   macro avg       0.54      0.59      0.55      3243
+weighted avg       0.59      0.62      0.60      3243
+
+Class 0 Accuracy 0.9509Class 1 Accuracy 0.8166Class 2 Accuracy 0.4266Class 3 Accuracy 0.4734Class 4 Accuracy 0.0000Class 5 Accuracy 0.7160Class 6 Accuracy 0.7256
+Epoch 02, Train Loss: 0.9184, Train Acc: 0.6551, LR: 0.010000
+Epoch 02, Val Loss: 0.7835, Val Acc: 0.7111
+Epoch 02, Confusion Matrix:
+[[440  48   0   0   0   0   1]
+ [ 34 380  84  12   6   1  12]
+ [  0  39 356  73  21   3   5]
+ [  0   9 114 455  62   5  12]
+ [  0   1  38 122  76   5   2]
+ [  2  15  58  25  20 180  24]
+ [  6  16   8   3   0  51 419]]
+Epoch 02, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.91      0.90      0.91       489
+           1       0.75      0.72      0.73       529
+           2       0.54      0.72      0.62       497
+           3       0.66      0.69      0.68       657
+           4       0.41      0.31      0.35       244
+           5       0.73      0.56      0.63       324
+           6       0.88      0.83      0.86       503
+
+    accuracy                           0.71      3243
+   macro avg       0.70      0.68      0.68      3243
+weighted avg       0.72      0.71      0.71      3243
+
+Class 0 Accuracy 0.8998Class 1 Accuracy 0.7183Class 2 Accuracy 0.7163Class 3 Accuracy 0.6925Class 4 Accuracy 0.3115Class 5 Accuracy 0.5556Class 6 Accuracy 0.8330
+Epoch 03, Train Loss: 0.8087, Train Acc: 0.6877, LR: 0.010000
+Epoch 03, Val Loss: 0.7153, Val Acc: 0.7262
+Epoch 03, Confusion Matrix:
+[[469  19   0   0   0   0   1]
+ [ 51 441  14   0   0   6  17]
+ [  1 147 237  51   6  44  11]
+ [  0  27 117 436  25  33  19]
+ [  0   3  28 109  41  57   6]
+ [  4   3   3  12   3 244  55]
+ [  1   2   0   4   0   9 487]]
+Epoch 03, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.89      0.96      0.92       489
+           1       0.69      0.83      0.75       529
+           2       0.59      0.48      0.53       497
+           3       0.71      0.66      0.69       657
+           4       0.55      0.17      0.26       244
+           5       0.62      0.75      0.68       324
+           6       0.82      0.97      0.89       503
+
+    accuracy                           0.73      3243
+   macro avg       0.70      0.69      0.67      3243
+weighted avg       0.71      0.73      0.71      3243
+
+Class 0 Accuracy 0.9591Class 1 Accuracy 0.8336Class 2 Accuracy 0.4769Class 3 Accuracy 0.6636Class 4 Accuracy 0.1680Class 5 Accuracy 0.7531Class 6 Accuracy 0.9682
+Epoch 04, Train Loss: 0.7143, Train Acc: 0.7254, LR: 0.010000
+Epoch 04, Val Loss: 0.6461, Val Acc: 0.7567
+Epoch 04, Confusion Matrix:
+[[455  31   0   0   0   0   3]
+ [ 30 462   9  16   0   2  10]
+ [  1 139 233  99  11  10   4]
+ [  0  12  76 542  11  14   2]
+ [  0   5  24 128  61  21   5]
+ [  1   8   9  23  13 233  37]
+ [  0   9   0  12   2  12 468]]
+Epoch 04, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.93      0.93      0.93       489
+           1       0.69      0.87      0.77       529
+           2       0.66      0.47      0.55       497
+           3       0.66      0.82      0.73       657
+           4       0.62      0.25      0.36       244
+           5       0.80      0.72      0.76       324
+           6       0.88      0.93      0.91       503
+
+    accuracy                           0.76      3243
+   macro avg       0.75      0.71      0.72      3243
+weighted avg       0.75      0.76      0.74      3243
+
+Class 0 Accuracy 0.9305Class 1 Accuracy 0.8733Class 2 Accuracy 0.4688Class 3 Accuracy 0.8250Class 4 Accuracy 0.2500Class 5 Accuracy 0.7191Class 6 Accuracy 0.9304
+Epoch 05, Train Loss: 0.6514, Train Acc: 0.7472, LR: 0.010000
+Epoch 05, Val Loss: 0.6563, Val Acc: 0.7434
+Epoch 05, Confusion Matrix:
+[[455  34   0   0   0   0   0]
+ [ 32 467  19   1   1   6   3]
+ [  0 104 342  22  21   8   0]
+ [  0  17 183 402  48   3   4]
+ [  0   1  41  78 112  11   1]
+ [  5   3  12  18  15 265   6]
+ [ 10   9   1   5   4 106 368]]
+Epoch 05, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.91      0.93      0.92       489
+           1       0.74      0.88      0.80       529
+           2       0.57      0.69      0.62       497
+           3       0.76      0.61      0.68       657
+           4       0.56      0.46      0.50       244
+           5       0.66      0.82      0.73       324
+           6       0.96      0.73      0.83       503
+
+    accuracy                           0.74      3243
+   macro avg       0.74      0.73      0.73      3243
+weighted avg       0.76      0.74      0.74      3243
+
+Class 0 Accuracy 0.9305Class 1 Accuracy 0.8828Class 2 Accuracy 0.6881Class 3 Accuracy 0.6119Class 4 Accuracy 0.4590Class 5 Accuracy 0.8179Class 6 Accuracy 0.7316
+Epoch 06, Train Loss: 0.6042, Train Acc: 0.7694, LR: 0.010000
+Epoch 06, Val Loss: 0.5339, Val Acc: 0.7928
+Epoch 06, Confusion Matrix:
+[[477  12   0   0   0   0   0]
+ [ 50 450  22   1   1   4   1]
+ [  1  84 352  30  15  13   2]
+ [  0  12 150 393  81  17   4]
+ [  0   1  25  33 141  41   3]
+ [  4   2   8   2   1 297  10]
+ [  5   4   0   3   0  30 461]]
+Epoch 06, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.89      0.98      0.93       489
+           1       0.80      0.85      0.82       529
+           2       0.63      0.71      0.67       497
+           3       0.85      0.60      0.70       657
+           4       0.59      0.58      0.58       244
+           5       0.74      0.92      0.82       324
+           6       0.96      0.92      0.94       503
+
+    accuracy                           0.79      3243
+   macro avg       0.78      0.79      0.78      3243
+weighted avg       0.80      0.79      0.79      3243
+
+Class 0 Accuracy 0.9755Class 1 Accuracy 0.8507Class 2 Accuracy 0.7082Class 3 Accuracy 0.5982Class 4 Accuracy 0.5779Class 5 Accuracy 0.9167Class 6 Accuracy 0.9165
+Epoch 07, Train Loss: 0.5742, Train Acc: 0.7786, LR: 0.010000
+Epoch 07, Val Loss: 0.5359, Val Acc: 0.7999
+Epoch 07, Confusion Matrix:
+[[455  34   0   0   0   0   0]
+ [ 28 439  52   3   0   1   6]
+ [  0  45 359  75   9   8   1]
+ [  0   2  87 559   3   6   0]
+ [  0   2  25 126  75  15   1]
+ [  3   2   8   9  13 240  49]
+ [  5   7   1  15   0   8 467]]
+Epoch 07, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.93      0.93      0.93       489
+           1       0.83      0.83      0.83       529
+           2       0.67      0.72      0.70       497
+           3       0.71      0.85      0.77       657
+           4       0.75      0.31      0.44       244
+           5       0.86      0.74      0.80       324
+           6       0.89      0.93      0.91       503
+
+    accuracy                           0.80      3243
+   macro avg       0.81      0.76      0.77      3243
+weighted avg       0.80      0.80      0.79      3243
+
+Class 0 Accuracy 0.9305Class 1 Accuracy 0.8299Class 2 Accuracy 0.7223Class 3 Accuracy 0.8508Class 4 Accuracy 0.3074Class 5 Accuracy 0.7407Class 6 Accuracy 0.9284
+Epoch 08, Train Loss: 0.5329, Train Acc: 0.7990, LR: 0.010000
+Epoch 08, Val Loss: 0.4725, Val Acc: 0.8224
+Epoch 08, Confusion Matrix:
+[[475  14   0   0   0   0   0]
+ [ 42 454  26   6   0   1   0]
+ [  0  55 351  68   6  14   3]
+ [  0   6  85 541  19   6   0]
+ [  0   1  26  64 122  30   1]
+ [  3   2   5  13   3 255  43]
+ [ 13   9   0   9   1   2 469]]
+Epoch 08, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.89      0.97      0.93       489
+           1       0.84      0.86      0.85       529
+           2       0.71      0.71      0.71       497
+           3       0.77      0.82      0.80       657
+           4       0.81      0.50      0.62       244
+           5       0.83      0.79      0.81       324
+           6       0.91      0.93      0.92       503
+
+    accuracy                           0.82      3243
+   macro avg       0.82      0.80      0.80      3243
+weighted avg       0.82      0.82      0.82      3243
+
+Class 0 Accuracy 0.9714Class 1 Accuracy 0.8582Class 2 Accuracy 0.7062Class 3 Accuracy 0.8234Class 4 Accuracy 0.5000Class 5 Accuracy 0.7870Class 6 Accuracy 0.9324
+Epoch 09, Train Loss: 0.5055, Train Acc: 0.8052, LR: 0.010000
+Epoch 09, Val Loss: 0.4419, Val Acc: 0.8329
+Epoch 09, Confusion Matrix:
+[[473  12   0   0   0   0   4]
+ [ 50 422  34   2   0   1  20]
+ [  2  58 371  48   7   6   5]
+ [  0   7  78 536  19   5  12]
+ [  0   1  23  53 155   9   3]
+ [  3   2   9   1  19 262  28]
+ [  0   2   0   3   1  15 482]]
+Epoch 09, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.90      0.97      0.93       489
+           1       0.84      0.80      0.82       529
+           2       0.72      0.75      0.73       497
+           3       0.83      0.82      0.82       657
+           4       0.77      0.64      0.70       244
+           5       0.88      0.81      0.84       324
+           6       0.87      0.96      0.91       503
+
+    accuracy                           0.83      3243
+   macro avg       0.83      0.82      0.82      3243
+weighted avg       0.83      0.83      0.83      3243
+
+Class 0 Accuracy 0.9673Class 1 Accuracy 0.7977Class 2 Accuracy 0.7465Class 3 Accuracy 0.8158Class 4 Accuracy 0.6352Class 5 Accuracy 0.8086Class 6 Accuracy 0.9583
+Epoch 10, Train Loss: 0.4747, Train Acc: 0.8177, LR: 0.010000
+Epoch 10, Val Loss: 0.4815, Val Acc: 0.8134
+Epoch 10, Confusion Matrix:
+[[461  27   0   0   0   0   1]
+ [ 21 453  46   3   0   3   3]
+ [  0  42 401  22   4  27   1]
+ [  0   1 157 438  37  23   1]
+ [  0   0  22  28 136  58   0]
+ [  1   3   5   4   5 302   4]
+ [  0   0   2   9   1  44 447]]
+Epoch 10, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.95      0.94      0.95       489
+           1       0.86      0.86      0.86       529
+           2       0.63      0.81      0.71       497
+           3       0.87      0.67      0.75       657
+           4       0.74      0.56      0.64       244
+           5       0.66      0.93      0.77       324
+           6       0.98      0.89      0.93       503
+
+    accuracy                           0.81      3243
+   macro avg       0.81      0.81      0.80      3243
+weighted avg       0.83      0.81      0.81      3243
+
+Class 0 Accuracy 0.9427Class 1 Accuracy 0.8563Class 2 Accuracy 0.8068Class 3 Accuracy 0.6667Class 4 Accuracy 0.5574Class 5 Accuracy 0.9321Class 6 Accuracy 0.8887
+Epoch 11, Train Loss: 0.4524, Train Acc: 0.8291, LR: 0.010000
+Epoch 11, Val Loss: 0.4590, Val Acc: 0.8267
+Epoch 11, Confusion Matrix:
+[[470  19   0   0   0   0   0]
+ [ 35 432  59   0   1   0   2]
+ [  0  34 414  31  14   3   1]
+ [  0   4 128 495  28   2   0]
+ [  0   0  18  42 182   2   0]
+ [  2   2   8   4  29 275   4]
+ [ 15  12   2   9   7  45 413]]
+Epoch 11, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.90      0.96      0.93       489
+           1       0.86      0.82      0.84       529
+           2       0.66      0.83      0.74       497
+           3       0.85      0.75      0.80       657
+           4       0.70      0.75      0.72       244
+           5       0.84      0.85      0.84       324
+           6       0.98      0.82      0.89       503
+
+    accuracy                           0.83      3243
+   macro avg       0.83      0.83      0.82      3243
+weighted avg       0.84      0.83      0.83      3243
+
+Class 0 Accuracy 0.9611Class 1 Accuracy 0.8166Class 2 Accuracy 0.8330Class 3 Accuracy 0.7534Class 4 Accuracy 0.7459Class 5 Accuracy 0.8488Class 6 Accuracy 0.8211
+Epoch 12, Train Loss: 0.4407, Train Acc: 0.8306, LR: 0.010000
+Epoch 12, Val Loss: 0.4223, Val Acc: 0.8378
+Epoch 12, Confusion Matrix:
+[[472  16   0   0   0   1   0]
+ [ 24 460  35   3   0   0   7]
+ [  0  62 365  60   9   1   0]
+ [  0   5  90 546   6   1   9]
+ [  0   1  18  69 154   0   2]
+ [  1   2   5  18  24 234  40]
+ [  7   0   1   2   0   7 486]]
+Epoch 12, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.94      0.97      0.95       489
+           1       0.84      0.87      0.86       529
+           2       0.71      0.73      0.72       497
+           3       0.78      0.83      0.81       657
+           4       0.80      0.63      0.70       244
+           5       0.96      0.72      0.82       324
+           6       0.89      0.97      0.93       503
+
+    accuracy                           0.84      3243
+   macro avg       0.85      0.82      0.83      3243
+weighted avg       0.84      0.84      0.84      3243
+
+Class 0 Accuracy 0.9652Class 1 Accuracy 0.8696Class 2 Accuracy 0.7344Class 3 Accuracy 0.8311Class 4 Accuracy 0.6311Class 5 Accuracy 0.7222Class 6 Accuracy 0.9662
+Epoch 13, Train Loss: 0.4161, Train Acc: 0.8421, LR: 0.010000
+Epoch 13, Val Loss: 0.4356, Val Acc: 0.8261
+Epoch 13, Confusion Matrix:
+[[475  14   0   0   0   0   0]
+ [ 40 468  16   2   0   0   3]
+ [  0  99 286 104   7   1   0]
+ [  0  11  51 585   7   1   2]
+ [  0   2   6  72 162   0   2]
+ [  3   4   5  21  27 217  47]
+ [  3   4   0   7   0   3 486]]
+Epoch 13, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.91      0.97      0.94       489
+           1       0.78      0.88      0.83       529
+           2       0.79      0.58      0.66       497
+           3       0.74      0.89      0.81       657
+           4       0.80      0.66      0.72       244
+           5       0.98      0.67      0.79       324
+           6       0.90      0.97      0.93       503
+
+    accuracy                           0.83      3243
+   macro avg       0.84      0.80      0.81      3243
+weighted avg       0.83      0.83      0.82      3243
+
+Class 0 Accuracy 0.9714Class 1 Accuracy 0.8847Class 2 Accuracy 0.5755Class 3 Accuracy 0.8904Class 4 Accuracy 0.6639Class 5 Accuracy 0.6698Class 6 Accuracy 0.9662
+Epoch 14, Train Loss: 0.4074, Train Acc: 0.8437, LR: 0.010000
+Epoch 14, Val Loss: 0.4184, Val Acc: 0.8418
+Epoch 14, Confusion Matrix:
+[[486   3   0   0   0   0   0]
+ [ 83 422  15   7   0   0   2]
+ [  1  68 317  90   9  10   2]
+ [  0   4  44 584  17   6   2]
+ [  0   2   8  29 174  29   2]
+ [  1   4   0   1   1 256  61]
+ [  1   2   0   5   2   2 491]]
+Epoch 14, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.85      0.99      0.92       489
+           1       0.84      0.80      0.82       529
+           2       0.83      0.64      0.72       497
+           3       0.82      0.89      0.85       657
+           4       0.86      0.71      0.78       244
+           5       0.84      0.79      0.82       324
+           6       0.88      0.98      0.92       503
+
+    accuracy                           0.84      3243
+   macro avg       0.84      0.83      0.83      3243
+weighted avg       0.84      0.84      0.84      3243
+
+Class 0 Accuracy 0.9939Class 1 Accuracy 0.7977Class 2 Accuracy 0.6378Class 3 Accuracy 0.8889Class 4 Accuracy 0.7131Class 5 Accuracy 0.7901Class 6 Accuracy 0.9761
+Epoch 15, Train Loss: 0.3874, Train Acc: 0.8562, LR: 0.010000
+Epoch 15, Val Loss: 0.3810, Val Acc: 0.8492
+Epoch 15, Confusion Matrix:
+[[476  11   0   0   0   0   2]
+ [ 34 448  30   4   0   2  11]
+ [  0  44 340 104   5   2   2]
+ [  1   3  51 574  25   3   0]
+ [  0   1  13  30 199   1   0]
+ [  2   0  14   9  24 262  13]
+ [  0  15   1  16   1  15 455]]
+Epoch 15, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.93      0.97      0.95       489
+           1       0.86      0.85      0.85       529
+           2       0.76      0.68      0.72       497
+           3       0.78      0.87      0.82       657
+           4       0.78      0.82      0.80       244
+           5       0.92      0.81      0.86       324
+           6       0.94      0.90      0.92       503
+
+    accuracy                           0.85      3243
+   macro avg       0.85      0.84      0.85      3243
+weighted avg       0.85      0.85      0.85      3243
+
+Class 0 Accuracy 0.9734Class 1 Accuracy 0.8469Class 2 Accuracy 0.6841Class 3 Accuracy 0.8737Class 4 Accuracy 0.8156Class 5 Accuracy 0.8086Class 6 Accuracy 0.9046
+Epoch 16, Train Loss: 0.3818, Train Acc: 0.8530, LR: 0.010000
+Epoch 16, Val Loss: 0.3627, Val Acc: 0.8622
+Epoch 16, Confusion Matrix:
+[[445  36   0   1   0   1   6]
+ [  9 471  35   3   1   0  10]
+ [  0  49 377  42  11  14   4]
+ [  0   4  82 540  17   7   7]
+ [  0   1  14  37 186   5   1]
+ [  0   1   1   2   8 295  17]
+ [  0   1   0   3   1  16 482]]
+Epoch 16, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.98      0.91      0.94       489
+           1       0.84      0.89      0.86       529
+           2       0.74      0.76      0.75       497
+           3       0.86      0.82      0.84       657
+           4       0.83      0.76      0.79       244
+           5       0.87      0.91      0.89       324
+           6       0.91      0.96      0.94       503
+
+    accuracy                           0.86      3243
+   macro avg       0.86      0.86      0.86      3243
+weighted avg       0.86      0.86      0.86      3243
+
+Class 0 Accuracy 0.9100Class 1 Accuracy 0.8904Class 2 Accuracy 0.7586Class 3 Accuracy 0.8219Class 4 Accuracy 0.7623Class 5 Accuracy 0.9105Class 6 Accuracy 0.9583
+Epoch 17, Train Loss: 0.3751, Train Acc: 0.8554, LR: 0.010000
+Epoch 17, Val Loss: 0.4569, Val Acc: 0.8295
+Epoch 17, Confusion Matrix:
+[[475  13   1   0   0   0   0]
+ [ 28 450  43   3   0   0   5]
+ [  0  48 371  67   5   3   3]
+ [  0   2  83 552   9   1  10]
+ [  0   0   9  83 148   2   2]
+ [  1   1  13  39  18 228  24]
+ [  3   5   3   5   2  19 466]]
+Epoch 17, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.94      0.97      0.95       489
+           1       0.87      0.85      0.86       529
+           2       0.71      0.75      0.73       497
+           3       0.74      0.84      0.79       657
+           4       0.81      0.61      0.69       244
+           5       0.90      0.70      0.79       324
+           6       0.91      0.93      0.92       503
+
+    accuracy                           0.83      3243
+   macro avg       0.84      0.81      0.82      3243
+weighted avg       0.83      0.83      0.83      3243
+
+Class 0 Accuracy 0.9714Class 1 Accuracy 0.8507Class 2 Accuracy 0.7465Class 3 Accuracy 0.8402Class 4 Accuracy 0.6066Class 5 Accuracy 0.7037Class 6 Accuracy 0.9264
+Epoch 18, Train Loss: 0.3700, Train Acc: 0.8556, LR: 0.010000
+Epoch 18, Val Loss: 0.6298, Val Acc: 0.8286
+Epoch 18, Confusion Matrix:
+[[472   7   0   0   0   0  10]
+ [ 34 414  61   5   0   0  15]
+ [  0  22 377  86   9   1   2]
+ [  1   0  57 584   5   1   9]
+ [  0   0  13  85 144   2   0]
+ [  2   1  13  19  14 241  34]
+ [  0   0   5  20   1  22 455]]
+Epoch 18, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.93      0.97      0.95       489
+           1       0.93      0.78      0.85       529
+           2       0.72      0.76      0.74       497
+           3       0.73      0.89      0.80       657
+           4       0.83      0.59      0.69       244
+           5       0.90      0.74      0.82       324
+           6       0.87      0.90      0.89       503
+
+    accuracy                           0.83      3243
+   macro avg       0.84      0.80      0.82      3243
+weighted avg       0.84      0.83      0.83      3243
+
+Class 0 Accuracy 0.9652Class 1 Accuracy 0.7826Class 2 Accuracy 0.7586Class 3 Accuracy 0.8889Class 4 Accuracy 0.5902Class 5 Accuracy 0.7438Class 6 Accuracy 0.9046
+Epoch 19, Train Loss: 0.3728, Train Acc: 0.8595, LR: 0.010000
+Epoch 19, Val Loss: 0.3845, Val Acc: 0.8545
+Epoch 19, Confusion Matrix:
+[[482   7   0   0   0   0   0]
+ [ 44 431  46   3   0   0   5]
+ [  0  27 399  56   9   3   3]
+ [  0   3  76 558  12   3   5]
+ [  0   0  16  56 171   0   1]
+ [  1   1   6  13  34 235  34]
+ [  0   0   0   4   0   4 495]]
+Epoch 19, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.91      0.99      0.95       489
+           1       0.92      0.81      0.86       529
+           2       0.73      0.80      0.77       497
+           3       0.81      0.85      0.83       657
+           4       0.76      0.70      0.73       244
+           5       0.96      0.73      0.83       324
+           6       0.91      0.98      0.95       503
+
+    accuracy                           0.85      3243
+   macro avg       0.86      0.84      0.84      3243
+weighted avg       0.86      0.85      0.85      3243
+
+Class 0 Accuracy 0.9857Class 1 Accuracy 0.8147Class 2 Accuracy 0.8028Class 3 Accuracy 0.8493Class 4 Accuracy 0.7008Class 5 Accuracy 0.7253Class 6 Accuracy 0.9841
+Epoch 20, Train Loss: 0.3409, Train Acc: 0.8696, LR: 0.010000
+Epoch 20, Val Loss: 0.3128, Val Acc: 0.8770
+Epoch 20, Confusion Matrix:
+[[472  17   0   0   0   0   0]
+ [ 19 436  70   3   0   0   1]
+ [  0  25 415  46   6   5   0]
+ [  0   0  74 573   8   2   0]
+ [  0   0  12  39 184   9   0]
+ [  0   2   3   4   7 289  19]
+ [  4   1   1  10   2  10 475]]
+Epoch 20, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.95      0.97      0.96       489
+           1       0.91      0.82      0.86       529
+           2       0.72      0.84      0.77       497
+           3       0.85      0.87      0.86       657
+           4       0.89      0.75      0.82       244
+           5       0.92      0.89      0.90       324
+           6       0.96      0.94      0.95       503
+
+    accuracy                           0.88      3243
+   macro avg       0.89      0.87      0.88      3243
+weighted avg       0.88      0.88      0.88      3243
+
+Class 0 Accuracy 0.9652Class 1 Accuracy 0.8242Class 2 Accuracy 0.8350Class 3 Accuracy 0.8721Class 4 Accuracy 0.7541Class 5 Accuracy 0.8920Class 6 Accuracy 0.9443
+Epoch 21, Train Loss: 0.3377, Train Acc: 0.8685, LR: 0.010000
+Epoch 21, Val Loss: 0.3933, Val Acc: 0.8501
+Epoch 21, Confusion Matrix:
+[[478  11   0   0   0   0   0]
+ [ 29 459  37   2   0   0   2]
+ [  0  49 384  41   5  17   1]
+ [  0   2  74 551   7  13  10]
+ [  0   1  14  43 158  27   1]
+ [  2   2   1   1   2 312   4]
+ [  1   4   0   2   0  81 415]]
+Epoch 21, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.94      0.98      0.96       489
+           1       0.87      0.87      0.87       529
+           2       0.75      0.77      0.76       497
+           3       0.86      0.84      0.85       657
+           4       0.92      0.65      0.76       244
+           5       0.69      0.96      0.81       324
+           6       0.96      0.83      0.89       503
+
+    accuracy                           0.85      3243
+   macro avg       0.86      0.84      0.84      3243
+weighted avg       0.86      0.85      0.85      3243
+
+Class 0 Accuracy 0.9775Class 1 Accuracy 0.8677Class 2 Accuracy 0.7726Class 3 Accuracy 0.8387Class 4 Accuracy 0.6475Class 5 Accuracy 0.9630Class 6 Accuracy 0.8250
+Epoch 22, Train Loss: 0.3277, Train Acc: 0.8723, LR: 0.010000
+Epoch 22, Val Loss: 0.4866, Val Acc: 0.8190
+Epoch 22, Confusion Matrix:
+[[453  32   1   0   0   0   3]
+ [ 11 410 100   5   0   0   3]
+ [  0  12 427  54   2   2   0]
+ [  0   0  75 575   5   2   0]
+ [  0   0  13  67 153  11   0]
+ [  1   1   6  15   9 290   2]
+ [  1   2   4  26   4 118 348]]
+Epoch 22, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.93      0.95       489
+           1       0.90      0.78      0.83       529
+           2       0.68      0.86      0.76       497
+           3       0.77      0.88      0.82       657
+           4       0.88      0.63      0.73       244
+           5       0.69      0.90      0.78       324
+           6       0.98      0.69      0.81       503
+
+    accuracy                           0.82      3243
+   macro avg       0.84      0.81      0.81      3243
+weighted avg       0.84      0.82      0.82      3243
+
+Class 0 Accuracy 0.9264Class 1 Accuracy 0.7750Class 2 Accuracy 0.8592Class 3 Accuracy 0.8752Class 4 Accuracy 0.6270Class 5 Accuracy 0.8951Class 6 Accuracy 0.6918
+Epoch 23, Train Loss: 0.3265, Train Acc: 0.8743, LR: 0.010000
+Epoch 23, Val Loss: 0.3316, Val Acc: 0.8797
+Epoch 23, Confusion Matrix:
+[[473  12   0   0   0   3   1]
+ [ 18 454  36  12   1   5   3]
+ [  0  29 345 108   9   6   0]
+ [  0   2  22 622   5   4   2]
+ [  0   1   3  46 188   5   1]
+ [  0   1   2   4   9 288  20]
+ [  1   3   0   8   0   8 483]]
+Epoch 23, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.97      0.96       489
+           1       0.90      0.86      0.88       529
+           2       0.85      0.69      0.76       497
+           3       0.78      0.95      0.85       657
+           4       0.89      0.77      0.82       244
+           5       0.90      0.89      0.90       324
+           6       0.95      0.96      0.95       503
+
+    accuracy                           0.88      3243
+   macro avg       0.89      0.87      0.88      3243
+weighted avg       0.88      0.88      0.88      3243
+
+Class 0 Accuracy 0.9673Class 1 Accuracy 0.8582Class 2 Accuracy 0.6942Class 3 Accuracy 0.9467Class 4 Accuracy 0.7705Class 5 Accuracy 0.8889Class 6 Accuracy 0.9602
+Epoch 24, Train Loss: 0.3213, Train Acc: 0.8758, LR: 0.010000
+Epoch 24, Val Loss: 0.4233, Val Acc: 0.8356
+Epoch 24, Confusion Matrix:
+[[483   3   0   0   0   0   3]
+ [ 57 445  22   0   0   1   4]
+ [  0  66 404  24   0   2   1]
+ [  1   7 142 498   1   1   7]
+ [  0   2  36  43 126  36   1]
+ [  0   1   7   1   1 291  23]
+ [  6  16   5   0   0  13 463]]
+Epoch 24, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.88      0.99      0.93       489
+           1       0.82      0.84      0.83       529
+           2       0.66      0.81      0.73       497
+           3       0.88      0.76      0.81       657
+           4       0.98      0.52      0.68       244
+           5       0.85      0.90      0.87       324
+           6       0.92      0.92      0.92       503
+
+    accuracy                           0.84      3243
+   macro avg       0.86      0.82      0.83      3243
+weighted avg       0.85      0.84      0.83      3243
+
+Class 0 Accuracy 0.9877Class 1 Accuracy 0.8412Class 2 Accuracy 0.8129Class 3 Accuracy 0.7580Class 4 Accuracy 0.5164Class 5 Accuracy 0.8981Class 6 Accuracy 0.9205
+Epoch 25, Train Loss: 0.3185, Train Acc: 0.8770, LR: 0.010000
+Epoch 25, Val Loss: 0.3978, Val Acc: 0.8504
+Epoch 25, Confusion Matrix:
+[[476  12   0   0   0   0   1]
+ [ 42 428  42  13   0   0   4]
+ [  0  31 289 124  24  28   1]
+ [  0   1  20 588  38  10   0]
+ [  0   0   1  18 208  16   1]
+ [  1   0   1   2   9 290  21]
+ [  1   0   1   7   0  15 479]]
+Epoch 25, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.92      0.97      0.94       489
+           1       0.91      0.81      0.86       529
+           2       0.82      0.58      0.68       497
+           3       0.78      0.89      0.83       657
+           4       0.75      0.85      0.80       244
+           5       0.81      0.90      0.85       324
+           6       0.94      0.95      0.95       503
+
+    accuracy                           0.85      3243
+   macro avg       0.85      0.85      0.84      3243
+weighted avg       0.85      0.85      0.85      3243
+
+Class 0 Accuracy 0.9734Class 1 Accuracy 0.8091Class 2 Accuracy 0.5815Class 3 Accuracy 0.8950Class 4 Accuracy 0.8525Class 5 Accuracy 0.8951Class 6 Accuracy 0.9523
+Epoch 26, Train Loss: 0.3105, Train Acc: 0.8836, LR: 0.010000
+Epoch 26, Val Loss: 0.3625, Val Acc: 0.8597
+Epoch 26, Confusion Matrix:
+[[485   4   0   0   0   0   0]
+ [ 55 450  17   5   0   0   2]
+ [  0  74 301 118   2   2   0]
+ [  1   4  35 605   9   2   1]
+ [  0   2   1  42 176  23   0]
+ [  0   2   2   7   2 280  31]
+ [  4   1   0   5   1   1 491]]
+Epoch 26, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.89      0.99      0.94       489
+           1       0.84      0.85      0.84       529
+           2       0.85      0.61      0.71       497
+           3       0.77      0.92      0.84       657
+           4       0.93      0.72      0.81       244
+           5       0.91      0.86      0.89       324
+           6       0.94      0.98      0.96       503
+
+    accuracy                           0.86      3243
+   macro avg       0.87      0.85      0.85      3243
+weighted avg       0.86      0.86      0.86      3243
+
+Class 0 Accuracy 0.9918Class 1 Accuracy 0.8507Class 2 Accuracy 0.6056Class 3 Accuracy 0.9209Class 4 Accuracy 0.7213Class 5 Accuracy 0.8642Class 6 Accuracy 0.9761
+Epoch 27, Train Loss: 0.3078, Train Acc: 0.8825, LR: 0.010000
+Epoch 27, Val Loss: 0.3997, Val Acc: 0.8467
+Epoch 27, Confusion Matrix:
+[[465  23   1   0   0   0   0]
+ [ 23 465  29   6   0   1   5]
+ [  0  68 273 148   4   3   1]
+ [  0   2  32 608  10   2   3]
+ [  0   1   6  48 181   7   1]
+ [  2   1   2   9   9 289  12]
+ [  0   5   2   5   0  26 465]]
+Epoch 27, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.95      0.95      0.95       489
+           1       0.82      0.88      0.85       529
+           2       0.79      0.55      0.65       497
+           3       0.74      0.93      0.82       657
+           4       0.89      0.74      0.81       244
+           5       0.88      0.89      0.89       324
+           6       0.95      0.92      0.94       503
+
+    accuracy                           0.85      3243
+   macro avg       0.86      0.84      0.84      3243
+weighted avg       0.85      0.85      0.84      3243
+
+Class 0 Accuracy 0.9509Class 1 Accuracy 0.8790Class 2 Accuracy 0.5493Class 3 Accuracy 0.9254Class 4 Accuracy 0.7418Class 5 Accuracy 0.8920Class 6 Accuracy 0.9245
+Epoch 28, Train Loss: 0.2947, Train Acc: 0.8869, LR: 0.010000
+Epoch 28, Val Loss: 0.3415, Val Acc: 0.8649
+Epoch 28, Confusion Matrix:
+[[474  14   0   1   0   0   0]
+ [ 26 425  65  11   0   1   1]
+ [  1  21 383  80   2   7   3]
+ [  0   1  47 600   2   6   1]
+ [  0   0   7  52 164  20   1]
+ [  0   1   2   3   6 285  27]
+ [  5   1   1  13   2   7 474]]
+Epoch 28, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.94      0.97      0.95       489
+           1       0.92      0.80      0.86       529
+           2       0.76      0.77      0.76       497
+           3       0.79      0.91      0.85       657
+           4       0.93      0.67      0.78       244
+           5       0.87      0.88      0.88       324
+           6       0.93      0.94      0.94       503
+
+    accuracy                           0.86      3243
+   macro avg       0.88      0.85      0.86      3243
+weighted avg       0.87      0.86      0.86      3243
+
+Class 0 Accuracy 0.9693Class 1 Accuracy 0.8034Class 2 Accuracy 0.7706Class 3 Accuracy 0.9132Class 4 Accuracy 0.6721Class 5 Accuracy 0.8796Class 6 Accuracy 0.9423
+Epoch 29, Train Loss: 0.2959, Train Acc: 0.8863, LR: 0.010000
+Epoch 29, Val Loss: 0.4027, Val Acc: 0.8486
+Epoch 29, Confusion Matrix:
+[[472  16   0   0   0   0   1]
+ [ 18 490  18   0   0   1   2]
+ [  0  90 384  15   2   4   2]
+ [  0  11 143 464  17  18   4]
+ [  0   2  20  25 174  22   1]
+ [  0   4   3   0   2 308   7]
+ [  1   5   2   1   0  34 460]]
+Epoch 29, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.97      0.96       489
+           1       0.79      0.93      0.85       529
+           2       0.67      0.77      0.72       497
+           3       0.92      0.71      0.80       657
+           4       0.89      0.71      0.79       244
+           5       0.80      0.95      0.87       324
+           6       0.96      0.91      0.94       503
+
+    accuracy                           0.85      3243
+   macro avg       0.86      0.85      0.85      3243
+weighted avg       0.86      0.85      0.85      3243
+
+Class 0 Accuracy 0.9652Class 1 Accuracy 0.9263Class 2 Accuracy 0.7726Class 3 Accuracy 0.7062Class 4 Accuracy 0.7131Class 5 Accuracy 0.9506Class 6 Accuracy 0.9145
+Epoch 30, Train Loss: 0.1934, Train Acc: 0.9294, LR: 0.001000
+Epoch 30, Val Loss: 0.2660, Val Acc: 0.8970
+Epoch 30, Confusion Matrix:
+[[478  11   0   0   0   0   0]
+ [ 25 476  20   7   0   0   1]
+ [  0  63 370  59   1   3   1]
+ [  0   6  40 605   3   2   1]
+ [  0   1   4  33 195  10   1]
+ [  0   0   2   0   5 300  17]
+ [  0   1   0   3   0  14 485]]
+Epoch 30, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.95      0.98      0.96       489
+           1       0.85      0.90      0.88       529
+           2       0.85      0.74      0.79       497
+           3       0.86      0.92      0.89       657
+           4       0.96      0.80      0.87       244
+           5       0.91      0.93      0.92       324
+           6       0.96      0.96      0.96       503
+
+    accuracy                           0.90      3243
+   macro avg       0.90      0.89      0.90      3243
+weighted avg       0.90      0.90      0.90      3243
+
+Class 0 Accuracy 0.9775Class 1 Accuracy 0.8998Class 2 Accuracy 0.7445Class 3 Accuracy 0.9209Class 4 Accuracy 0.7992Class 5 Accuracy 0.9259Class 6 Accuracy 0.9642
+Epoch 31, Train Loss: 0.1602, Train Acc: 0.9391, LR: 0.001000
+Epoch 31, Val Loss: 0.2589, Val Acc: 0.9041
+Epoch 31, Confusion Matrix:
+[[475  13   0   0   0   1   0]
+ [ 15 478  29   5   0   0   2]
+ [  0  43 407  43   2   2   0]
+ [  1   2  56 588   7   2   1]
+ [  0   2   6  25 199  11   1]
+ [  0   0   2   1   4 296  21]
+ [  0   1   0   5   0   8 489]]
+Epoch 31, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.97      0.97       489
+           1       0.89      0.90      0.90       529
+           2       0.81      0.82      0.82       497
+           3       0.88      0.89      0.89       657
+           4       0.94      0.82      0.87       244
+           5       0.93      0.91      0.92       324
+           6       0.95      0.97      0.96       503
+
+    accuracy                           0.90      3243
+   macro avg       0.91      0.90      0.90      3243
+weighted avg       0.90      0.90      0.90      3243
+
+Class 0 Accuracy 0.9714Class 1 Accuracy 0.9036Class 2 Accuracy 0.8189Class 3 Accuracy 0.8950Class 4 Accuracy 0.8156Class 5 Accuracy 0.9136Class 6 Accuracy 0.9722
+Epoch 32, Train Loss: 0.1509, Train Acc: 0.9424, LR: 0.001000
+Epoch 32, Val Loss: 0.2652, Val Acc: 0.9038
+Epoch 32, Confusion Matrix:
+[[474  13   0   0   0   1   1]
+ [ 17 482  23   5   1   0   1]
+ [  0  47 390  54   4   2   0]
+ [  1   3  43 599   7   3   1]
+ [  0   0   5  30 200   8   1]
+ [  0   0   1   1   4 302  16]
+ [  0   1   0   4   0  14 484]]
+Epoch 32, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.97      0.97       489
+           1       0.88      0.91      0.90       529
+           2       0.84      0.78      0.81       497
+           3       0.86      0.91      0.89       657
+           4       0.93      0.82      0.87       244
+           5       0.92      0.93      0.92       324
+           6       0.96      0.96      0.96       503
+
+    accuracy                           0.90      3243
+   macro avg       0.91      0.90      0.90      3243
+weighted avg       0.90      0.90      0.90      3243
+
+Class 0 Accuracy 0.9693Class 1 Accuracy 0.9112Class 2 Accuracy 0.7847Class 3 Accuracy 0.9117Class 4 Accuracy 0.8197Class 5 Accuracy 0.9321Class 6 Accuracy 0.9622
+Epoch 33, Train Loss: 0.1382, Train Acc: 0.9489, LR: 0.001000
+Epoch 33, Val Loss: 0.2708, Val Acc: 0.9013
+Epoch 33, Confusion Matrix:
+[[474  10   0   1   0   1   3]
+ [ 27 467  26   6   1   0   2]
+ [  0  46 391  52   7   1   0]
+ [  0   3  44 597  10   2   1]
+ [  0   0   5  22 210   6   1]
+ [  0   0   1   1   5 296  21]
+ [  0   1   0   3   2   9 488]]
+Epoch 33, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.95      0.97      0.96       489
+           1       0.89      0.88      0.88       529
+           2       0.84      0.79      0.81       497
+           3       0.88      0.91      0.89       657
+           4       0.89      0.86      0.88       244
+           5       0.94      0.91      0.93       324
+           6       0.95      0.97      0.96       503
+
+    accuracy                           0.90      3243
+   macro avg       0.90      0.90      0.90      3243
+weighted avg       0.90      0.90      0.90      3243
+
+Class 0 Accuracy 0.9693Class 1 Accuracy 0.8828Class 2 Accuracy 0.7867Class 3 Accuracy 0.9087Class 4 Accuracy 0.8607Class 5 Accuracy 0.9136Class 6 Accuracy 0.9702
+Epoch 34, Train Loss: 0.1395, Train Acc: 0.9471, LR: 0.001000
+Epoch 34, Val Loss: 0.2588, Val Acc: 0.9053
+Epoch 34, Confusion Matrix:
+[[478  11   0   0   0   0   0]
+ [ 15 474  31   7   1   0   1]
+ [  0  38 389  62   7   1   0]
+ [  0   3  37 604   9   2   2]
+ [  0   0   4  20 215   4   1]
+ [  0   0   2   1   9 293  19]
+ [  0   1   0   4   1  14 483]]
+Epoch 34, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.98      0.97       489
+           1       0.90      0.90      0.90       529
+           2       0.84      0.78      0.81       497
+           3       0.87      0.92      0.89       657
+           4       0.89      0.88      0.88       244
+           5       0.93      0.90      0.92       324
+           6       0.95      0.96      0.96       503
+
+    accuracy                           0.91      3243
+   macro avg       0.91      0.90      0.90      3243
+weighted avg       0.91      0.91      0.90      3243
+
+Class 0 Accuracy 0.9775Class 1 Accuracy 0.8960Class 2 Accuracy 0.7827Class 3 Accuracy 0.9193Class 4 Accuracy 0.8811Class 5 Accuracy 0.9043Class 6 Accuracy 0.9602
+Epoch 35, Train Loss: 0.1263, Train Acc: 0.9513, LR: 0.001000
+Epoch 35, Val Loss: 0.2641, Val Acc: 0.9069
+Epoch 35, Confusion Matrix:
+[[475  14   0   0   0   0   0]
+ [ 11 478  36   2   0   0   2]
+ [  0  36 417  37   5   2   0]
+ [  1   3  61 577  11   2   2]
+ [  0   0   6  17 210  10   1]
+ [  0   0   1   1   4 304  14]
+ [  1   1   0   3   1  17 480]]
+Epoch 35, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.97      0.97       489
+           1       0.90      0.90      0.90       529
+           2       0.80      0.84      0.82       497
+           3       0.91      0.88      0.89       657
+           4       0.91      0.86      0.88       244
+           5       0.91      0.94      0.92       324
+           6       0.96      0.95      0.96       503
+
+    accuracy                           0.91      3243
+   macro avg       0.91      0.91      0.91      3243
+weighted avg       0.91      0.91      0.91      3243
+
+Class 0 Accuracy 0.9714Class 1 Accuracy 0.9036Class 2 Accuracy 0.8390Class 3 Accuracy 0.8782Class 4 Accuracy 0.8607Class 5 Accuracy 0.9383Class 6 Accuracy 0.9543
+Epoch 36, Train Loss: 0.1256, Train Acc: 0.9541, LR: 0.001000
+Epoch 36, Val Loss: 0.2681, Val Acc: 0.9066
+Epoch 36, Confusion Matrix:
+[[481   6   1   1   0   0   0]
+ [ 22 472  28   6   0   0   1]
+ [  0  42 410  40   3   2   0]
+ [  0   3  54 593   4   2   1]
+ [  0   0   6  29 199   9   1]
+ [  0   0   2   1   5 301  15]
+ [  0   1   0   6   1  11 484]]
+Epoch 36, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.98      0.97       489
+           1       0.90      0.89      0.90       529
+           2       0.82      0.82      0.82       497
+           3       0.88      0.90      0.89       657
+           4       0.94      0.82      0.87       244
+           5       0.93      0.93      0.93       324
+           6       0.96      0.96      0.96       503
+
+    accuracy                           0.91      3243
+   macro avg       0.91      0.90      0.91      3243
+weighted avg       0.91      0.91      0.91      3243
+
+Class 0 Accuracy 0.9836Class 1 Accuracy 0.8922Class 2 Accuracy 0.8249Class 3 Accuracy 0.9026Class 4 Accuracy 0.8156Class 5 Accuracy 0.9290Class 6 Accuracy 0.9622
+Epoch 37, Train Loss: 0.1154, Train Acc: 0.9574, LR: 0.001000
+Epoch 37, Val Loss: 0.2660, Val Acc: 0.9019
+Epoch 37, Confusion Matrix:
+[[473  15   0   0   0   0   1]
+ [ 11 475  35   6   1   0   1]
+ [  0  42 399  49   4   2   1]
+ [  1   2  48 598   6   1   1]
+ [  0   0   5  29 201   9   0]
+ [  0   0   1   1   7 298  17]
+ [  0   1   0   5   2  14 481]]
+Epoch 37, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.98      0.97      0.97       489
+           1       0.89      0.90      0.89       529
+           2       0.82      0.80      0.81       497
+           3       0.87      0.91      0.89       657
+           4       0.91      0.82      0.86       244
+           5       0.92      0.92      0.92       324
+           6       0.96      0.96      0.96       503
+
+    accuracy                           0.90      3243
+   macro avg       0.91      0.90      0.90      3243
+weighted avg       0.90      0.90      0.90      3243
+
+Class 0 Accuracy 0.9673Class 1 Accuracy 0.8979Class 2 Accuracy 0.8028Class 3 Accuracy 0.9102Class 4 Accuracy 0.8238Class 5 Accuracy 0.9198Class 6 Accuracy 0.9563
+Epoch 38, Train Loss: 0.1142, Train Acc: 0.9571, LR: 0.001000
+Epoch 38, Val Loss: 0.2695, Val Acc: 0.9013
+Epoch 38, Confusion Matrix:
+[[473  12   0   0   0   0   4]
+ [ 16 484  20   6   1   1   1]
+ [  0  52 388  48   7   1   1]
+ [  0   6  48 583  15   2   3]
+ [  0   0   6  18 216   3   1]
+ [  0   0   0   1  12 288  23]
+ [  0   1   0   3   2   6 491]]
+Epoch 38, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.97      0.97       489
+           1       0.87      0.91      0.89       529
+           2       0.84      0.78      0.81       497
+           3       0.88      0.89      0.89       657
+           4       0.85      0.89      0.87       244
+           5       0.96      0.89      0.92       324
+           6       0.94      0.98      0.96       503
+
+    accuracy                           0.90      3243
+   macro avg       0.90      0.90      0.90      3243
+weighted avg       0.90      0.90      0.90      3243
+
+Class 0 Accuracy 0.9673Class 1 Accuracy 0.9149Class 2 Accuracy 0.7807Class 3 Accuracy 0.8874Class 4 Accuracy 0.8852Class 5 Accuracy 0.8889Class 6 Accuracy 0.9761
+Epoch 39, Train Loss: 0.1151, Train Acc: 0.9552, LR: 0.001000
+Epoch 39, Val Loss: 0.2685, Val Acc: 0.9029
+Epoch 39, Confusion Matrix:
+[[470  15   1   0   0   1   2]
+ [ 15 475  35   3   0   1   0]
+ [  0  41 394  55   6   1   0]
+ [  0   3  47 597   6   2   2]
+ [  0   1   6  20 207   9   1]
+ [  0   0   1   0   6 296  21]
+ [  0   1   0   3   1   9 489]]
+Epoch 39, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.96      0.97       489
+           1       0.89      0.90      0.89       529
+           2       0.81      0.79      0.80       497
+           3       0.88      0.91      0.89       657
+           4       0.92      0.85      0.88       244
+           5       0.93      0.91      0.92       324
+           6       0.95      0.97      0.96       503
+
+    accuracy                           0.90      3243
+   macro avg       0.91      0.90      0.90      3243
+weighted avg       0.90      0.90      0.90      3243
+
+Class 0 Accuracy 0.9611Class 1 Accuracy 0.8979Class 2 Accuracy 0.7928Class 3 Accuracy 0.9087Class 4 Accuracy 0.8484Class 5 Accuracy 0.9136Class 6 Accuracy 0.9722
+Epoch 40, Train Loss: 0.1058, Train Acc: 0.9607, LR: 0.001000
+Epoch 40, Val Loss: 0.2781, Val Acc: 0.9023
+Epoch 40, Confusion Matrix:
+[[479   8   1   0   0   1   0]
+ [ 23 470  28   4   1   1   2]
+ [  0  41 384  63   8   1   0]
+ [  1   3  39 600  11   2   1]
+ [  0   0   6  23 207   7   1]
+ [  0   0   1   0   9 296  18]
+ [  0   1   0   3   2   7 490]]
+Epoch 40, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.95      0.98      0.97       489
+           1       0.90      0.89      0.89       529
+           2       0.84      0.77      0.80       497
+           3       0.87      0.91      0.89       657
+           4       0.87      0.85      0.86       244
+           5       0.94      0.91      0.93       324
+           6       0.96      0.97      0.97       503
+
+    accuracy                           0.90      3243
+   macro avg       0.90      0.90      0.90      3243
+weighted avg       0.90      0.90      0.90      3243
+
+Class 0 Accuracy 0.9796Class 1 Accuracy 0.8885Class 2 Accuracy 0.7726Class 3 Accuracy 0.9132Class 4 Accuracy 0.8484Class 5 Accuracy 0.9136Class 6 Accuracy 0.9742
+Epoch 41, Train Loss: 0.1008, Train Acc: 0.9622, LR: 0.001000
+Epoch 41, Val Loss: 0.2807, Val Acc: 0.8995
+Epoch 41, Confusion Matrix:
+[[474  12   1   0   0   1   1]
+ [ 14 471  37   5   0   1   1]
+ [  0  33 386  73   4   1   0]
+ [  0   3  36 612   3   2   1]
+ [  0   0   3  30 196  15   0]
+ [  0   0   1   0   5 299  19]
+ [  0   1   0   5   1  17 479]]
+Epoch 41, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.97      0.97       489
+           1       0.91      0.89      0.90       529
+           2       0.83      0.78      0.80       497
+           3       0.84      0.93      0.89       657
+           4       0.94      0.80      0.87       244
+           5       0.89      0.92      0.91       324
+           6       0.96      0.95      0.95       503
+
+    accuracy                           0.90      3243
+   macro avg       0.91      0.89      0.90      3243
+weighted avg       0.90      0.90      0.90      3243
+
+Class 0 Accuracy 0.9693Class 1 Accuracy 0.8904Class 2 Accuracy 0.7767Class 3 Accuracy 0.9315Class 4 Accuracy 0.8033Class 5 Accuracy 0.9228Class 6 Accuracy 0.9523
+Epoch 42, Train Loss: 0.0978, Train Acc: 0.9646, LR: 0.001000
+Epoch 42, Val Loss: 0.2775, Val Acc: 0.9013
+Epoch 42, Confusion Matrix:
+[[481   7   1   0   0   0   0]
+ [ 30 457  33   5   1   0   3]
+ [  0  41 402  47   5   1   1]
+ [  0   3  55 586  11   1   1]
+ [  0   0   5  15 217   6   1]
+ [  0   0   1   1  11 299  12]
+ [  0   1   0   3   2  16 481]]
+Epoch 42, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.94      0.98      0.96       489
+           1       0.90      0.86      0.88       529
+           2       0.81      0.81      0.81       497
+           3       0.89      0.89      0.89       657
+           4       0.88      0.89      0.88       244
+           5       0.93      0.92      0.92       324
+           6       0.96      0.96      0.96       503
+
+    accuracy                           0.90      3243
+   macro avg       0.90      0.90      0.90      3243
+weighted avg       0.90      0.90      0.90      3243
+
+Class 0 Accuracy 0.9836Class 1 Accuracy 0.8639Class 2 Accuracy 0.8089Class 3 Accuracy 0.8919Class 4 Accuracy 0.8893Class 5 Accuracy 0.9228Class 6 Accuracy 0.9563
+Epoch 43, Train Loss: 0.0987, Train Acc: 0.9620, LR: 0.001000
+Epoch 43, Val Loss: 0.2758, Val Acc: 0.9029
+Epoch 43, Confusion Matrix:
+[[474  14   0   0   0   1   0]
+ [ 17 472  32   3   1   0   4]
+ [  0  44 398  47   3   2   3]
+ [  0   3  42 598   8   3   3]
+ [  0   0   5  23 204  11   1]
+ [  0   0   1   0   7 300  16]
+ [  0   1   0   3   1  16 482]]
+Epoch 43, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.97      0.97       489
+           1       0.88      0.89      0.89       529
+           2       0.83      0.80      0.82       497
+           3       0.89      0.91      0.90       657
+           4       0.91      0.84      0.87       244
+           5       0.90      0.93      0.91       324
+           6       0.95      0.96      0.95       503
+
+    accuracy                           0.90      3243
+   macro avg       0.90      0.90      0.90      3243
+weighted avg       0.90      0.90      0.90      3243
+
+Class 0 Accuracy 0.9693Class 1 Accuracy 0.8922Class 2 Accuracy 0.8008Class 3 Accuracy 0.9102Class 4 Accuracy 0.8361Class 5 Accuracy 0.9259Class 6 Accuracy 0.9583
+Epoch 44, Train Loss: 0.0901, Train Acc: 0.9674, LR: 0.001000
+Epoch 44, Val Loss: 0.2883, Val Acc: 0.9038
+Epoch 44, Confusion Matrix:
+[[476  11   1   0   0   1   0]
+ [ 13 475  33   4   1   0   3]
+ [  0  35 387  69   5   1   0]
+ [  0   3  32 612   8   1   1]
+ [  0   0   5  22 211   5   1]
+ [  0   0   1   2   9 302  10]
+ [  1   1   0   4   2  27 468]]
+Epoch 44, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.97      0.97       489
+           1       0.90      0.90      0.90       529
+           2       0.84      0.78      0.81       497
+           3       0.86      0.93      0.89       657
+           4       0.89      0.86      0.88       244
+           5       0.90      0.93      0.91       324
+           6       0.97      0.93      0.95       503
+
+    accuracy                           0.90      3243
+   macro avg       0.91      0.90      0.90      3243
+weighted avg       0.90      0.90      0.90      3243
+
+Class 0 Accuracy 0.9734Class 1 Accuracy 0.8979Class 2 Accuracy 0.7787Class 3 Accuracy 0.9315Class 4 Accuracy 0.8648Class 5 Accuracy 0.9321Class 6 Accuracy 0.9304
+Epoch 45, Train Loss: 0.0908, Train Acc: 0.9680, LR: 0.001000
+Epoch 45, Val Loss: 0.2802, Val Acc: 0.9001
+Epoch 45, Confusion Matrix:
+[[479  10   0   0   0   0   0]
+ [ 19 466  38   2   0   1   3]
+ [  0  42 409  39   5   2   0]
+ [  0   2  71 571   8   2   3]
+ [  0   1   6  16 212   8   1]
+ [  0   0   2   0   7 301  14]
+ [  1   1   1   2   1  16 481]]
+Epoch 45, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.98      0.97       489
+           1       0.89      0.88      0.89       529
+           2       0.78      0.82      0.80       497
+           3       0.91      0.87      0.89       657
+           4       0.91      0.87      0.89       244
+           5       0.91      0.93      0.92       324
+           6       0.96      0.96      0.96       503
+
+    accuracy                           0.90      3243
+   macro avg       0.90      0.90      0.90      3243
+weighted avg       0.90      0.90      0.90      3243
+
+Class 0 Accuracy 0.9796Class 1 Accuracy 0.8809Class 2 Accuracy 0.8229Class 3 Accuracy 0.8691Class 4 Accuracy 0.8689Class 5 Accuracy 0.9290Class 6 Accuracy 0.9563
+Epoch 46, Train Loss: 0.0894, Train Acc: 0.9687, LR: 0.001000
+Epoch 46, Val Loss: 0.2773, Val Acc: 0.9038
+Epoch 46, Confusion Matrix:
+[[480   8   1   0   0   0   0]
+ [ 17 480  22   4   1   1   4]
+ [  0  64 378  48   4   1   2]
+ [  0   4  43 599   6   1   4]
+ [  0   1   5  20 205  12   1]
+ [  0   0   1   1   4 292  26]
+ [  1   1   0   2   0   2 497]]
+Epoch 46, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.98      0.97       489
+           1       0.86      0.91      0.88       529
+           2       0.84      0.76      0.80       497
+           3       0.89      0.91      0.90       657
+           4       0.93      0.84      0.88       244
+           5       0.94      0.90      0.92       324
+           6       0.93      0.99      0.96       503
+
+    accuracy                           0.90      3243
+   macro avg       0.91      0.90      0.90      3243
+weighted avg       0.90      0.90      0.90      3243
+
+Class 0 Accuracy 0.9816Class 1 Accuracy 0.9074Class 2 Accuracy 0.7606Class 3 Accuracy 0.9117Class 4 Accuracy 0.8402Class 5 Accuracy 0.9012Class 6 Accuracy 0.9881
+Epoch 47, Train Loss: 0.0907, Train Acc: 0.9666, LR: 0.001000
+Epoch 47, Val Loss: 0.2812, Val Acc: 0.9041
+Epoch 47, Confusion Matrix:
+[[471  15   1   0   0   2   0]
+ [  9 483  25   7   1   1   3]
+ [  0  50 397  40   6   3   1]
+ [  0   3  49 587  14   3   1]
+ [  0   0   6  18 208  11   1]
+ [  0   0   2   1   5 304  12]
+ [  0   1   0   3   0  17 482]]
+Epoch 47, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.98      0.96      0.97       489
+           1       0.88      0.91      0.89       529
+           2       0.83      0.80      0.81       497
+           3       0.89      0.89      0.89       657
+           4       0.89      0.85      0.87       244
+           5       0.89      0.94      0.91       324
+           6       0.96      0.96      0.96       503
+
+    accuracy                           0.90      3243
+   macro avg       0.90      0.90      0.90      3243
+weighted avg       0.90      0.90      0.90      3243
+
+Class 0 Accuracy 0.9632Class 1 Accuracy 0.9130Class 2 Accuracy 0.7988Class 3 Accuracy 0.8935Class 4 Accuracy 0.8525Class 5 Accuracy 0.9383Class 6 Accuracy 0.9583
+Epoch 48, Train Loss: 0.0775, Train Acc: 0.9722, LR: 0.001000
+Epoch 48, Val Loss: 0.2958, Val Acc: 0.9063
+Epoch 48, Confusion Matrix:
+[[479   9   1   0   0   0   0]
+ [ 17 469  35   5   0   0   3]
+ [  0  32 423  39   2   1   0]
+ [  0   3  64 586   2   1   1]
+ [  0   2   6  24 201  11   0]
+ [  0   0   1   3   3 306  11]
+ [  0   1   2   7   0  18 475]]
+Epoch 48, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.98      0.97       489
+           1       0.91      0.89      0.90       529
+           2       0.80      0.85      0.82       497
+           3       0.88      0.89      0.89       657
+           4       0.97      0.82      0.89       244
+           5       0.91      0.94      0.93       324
+           6       0.97      0.94      0.96       503
+
+    accuracy                           0.91      3243
+   macro avg       0.91      0.90      0.91      3243
+weighted avg       0.91      0.91      0.91      3243
+
+Class 0 Accuracy 0.9796Class 1 Accuracy 0.8866Class 2 Accuracy 0.8511Class 3 Accuracy 0.8919Class 4 Accuracy 0.8238Class 5 Accuracy 0.9444Class 6 Accuracy 0.9443
+Epoch 49, Train Loss: 0.0743, Train Acc: 0.9726, LR: 0.001000
+Epoch 49, Val Loss: 0.2932, Val Acc: 0.9007
+Epoch 49, Confusion Matrix:
+[[471  13   1   0   0   1   3]
+ [ 23 467  32   4   1   0   2]
+ [  0  38 402  49   5   2   1]
+ [  0   3  51 590   9   2   2]
+ [  0   0   5  19 210   9   1]
+ [  0   0   1   0   7 302  14]
+ [  0   1   0   3   0  20 479]]
+Epoch 49, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.95      0.96      0.96       489
+           1       0.89      0.88      0.89       529
+           2       0.82      0.81      0.81       497
+           3       0.89      0.90      0.89       657
+           4       0.91      0.86      0.88       244
+           5       0.90      0.93      0.92       324
+           6       0.95      0.95      0.95       503
+
+    accuracy                           0.90      3243
+   macro avg       0.90      0.90      0.90      3243
+weighted avg       0.90      0.90      0.90      3243
+
+Class 0 Accuracy 0.9632Class 1 Accuracy 0.8828Class 2 Accuracy 0.8089Class 3 Accuracy 0.8980Class 4 Accuracy 0.8607Class 5 Accuracy 0.9321Class 6 Accuracy 0.9523
+Epoch 50, Train Loss: 0.0777, Train Acc: 0.9718, LR: 0.001000
+Epoch 50, Val Loss: 0.2847, Val Acc: 0.9069
+Epoch 50, Confusion Matrix:
+[[478  10   1   0   0   0   0]
+ [ 17 479  28   3   0   0   2]
+ [  0  39 394  54   6   3   1]
+ [  0   3  46 595   8   4   1]
+ [  0   0   4  19 205  15   1]
+ [  0   0   1   1   2 305  15]
+ [  1   1   0   3   0  13 485]]
+Epoch 50, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.98      0.97       489
+           1       0.90      0.91      0.90       529
+           2       0.83      0.79      0.81       497
+           3       0.88      0.91      0.89       657
+           4       0.93      0.84      0.88       244
+           5       0.90      0.94      0.92       324
+           6       0.96      0.96      0.96       503
+
+    accuracy                           0.91      3243
+   macro avg       0.91      0.90      0.91      3243
+weighted avg       0.91      0.91      0.91      3243
+
+Class 0 Accuracy 0.9775Class 1 Accuracy 0.9055Class 2 Accuracy 0.7928Class 3 Accuracy 0.9056Class 4 Accuracy 0.8402Class 5 Accuracy 0.9414Class 6 Accuracy 0.9642
+Epoch 51, Train Loss: 0.0716, Train Acc: 0.9753, LR: 0.001000
+Epoch 51, Val Loss: 0.2928, Val Acc: 0.9038
+Epoch 51, Confusion Matrix:
+[[478  11   0   0   0   0   0]
+ [ 14 488  21   4   0   0   2]
+ [  0  61 390  39   6   1   0]
+ [  0   5  53 586  10   2   1]
+ [  0   0   6  16 213   8   1]
+ [  0   0   2   2   7 299  14]
+ [  0   1   0   3   1  21 477]]
+Epoch 51, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.98      0.97       489
+           1       0.86      0.92      0.89       529
+           2       0.83      0.78      0.80       497
+           3       0.90      0.89      0.90       657
+           4       0.90      0.87      0.89       244
+           5       0.90      0.92      0.91       324
+           6       0.96      0.95      0.96       503
+
+    accuracy                           0.90      3243
+   macro avg       0.90      0.90      0.90      3243
+weighted avg       0.90      0.90      0.90      3243
+
+Class 0 Accuracy 0.9775Class 1 Accuracy 0.9225Class 2 Accuracy 0.7847Class 3 Accuracy 0.8919Class 4 Accuracy 0.8730Class 5 Accuracy 0.9228Class 6 Accuracy 0.9483
+Epoch 52, Train Loss: 0.0753, Train Acc: 0.9733, LR: 0.001000
+Epoch 52, Val Loss: 0.2867, Val Acc: 0.9072
+Epoch 52, Confusion Matrix:
+[[472  15   1   0   0   0   1]
+ [  9 490  24   4   0   0   2]
+ [  0  43 401  48   3   1   1]
+ [  0   2  56 586  10   2   1]
+ [  0   0   7  17 212   7   1]
+ [  0   0   2   1   4 305  12]
+ [  1   1   0   5   1  19 476]]
+Epoch 52, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.98      0.97      0.97       489
+           1       0.89      0.93      0.91       529
+           2       0.82      0.81      0.81       497
+           3       0.89      0.89      0.89       657
+           4       0.92      0.87      0.89       244
+           5       0.91      0.94      0.93       324
+           6       0.96      0.95      0.95       503
+
+    accuracy                           0.91      3243
+   macro avg       0.91      0.91      0.91      3243
+weighted avg       0.91      0.91      0.91      3243
+
+Class 0 Accuracy 0.9652Class 1 Accuracy 0.9263Class 2 Accuracy 0.8068Class 3 Accuracy 0.8919Class 4 Accuracy 0.8689Class 5 Accuracy 0.9414Class 6 Accuracy 0.9463
+Epoch 53, Train Loss: 0.0732, Train Acc: 0.9732, LR: 0.001000
+Epoch 53, Val Loss: 0.2965, Val Acc: 0.9026
+Epoch 53, Confusion Matrix:
+[[474  13   1   0   0   0   1]
+ [ 12 474  32   6   1   0   4]
+ [  0  42 386  60   8   1   0]
+ [  0   3  41 603   6   3   1]
+ [  0   0   6  22 209   6   1]
+ [  0   0   2   1   6 303  12]
+ [  0   0   0   3   1  21 478]]
+Epoch 53, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.98      0.97      0.97       489
+           1       0.89      0.90      0.89       529
+           2       0.82      0.78      0.80       497
+           3       0.87      0.92      0.89       657
+           4       0.90      0.86      0.88       244
+           5       0.91      0.94      0.92       324
+           6       0.96      0.95      0.96       503
+
+    accuracy                           0.90      3243
+   macro avg       0.90      0.90      0.90      3243
+weighted avg       0.90      0.90      0.90      3243
+
+Class 0 Accuracy 0.9693Class 1 Accuracy 0.8960Class 2 Accuracy 0.7767Class 3 Accuracy 0.9178Class 4 Accuracy 0.8566Class 5 Accuracy 0.9352Class 6 Accuracy 0.9503
+Epoch 54, Train Loss: 0.0648, Train Acc: 0.9761, LR: 0.001000
+Epoch 54, Val Loss: 0.2962, Val Acc: 0.9032
+Epoch 54, Confusion Matrix:
+[[476   9   1   0   0   0   3]
+ [ 15 479  25   5   0   0   5]
+ [  0  49 402  42   3   1   0]
+ [  0   3  57 586   8   1   2]
+ [  0   0   7  23 206   7   1]
+ [  0   0   2   0   7 301  14]
+ [  0   1   1   4   0  18 479]]
+Epoch 54, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.97      0.97       489
+           1       0.89      0.91      0.90       529
+           2       0.81      0.81      0.81       497
+           3       0.89      0.89      0.89       657
+           4       0.92      0.84      0.88       244
+           5       0.92      0.93      0.92       324
+           6       0.95      0.95      0.95       503
+
+    accuracy                           0.90      3243
+   macro avg       0.91      0.90      0.90      3243
+weighted avg       0.90      0.90      0.90      3243
+
+Class 0 Accuracy 0.9734Class 1 Accuracy 0.9055Class 2 Accuracy 0.8089Class 3 Accuracy 0.8919Class 4 Accuracy 0.8443Class 5 Accuracy 0.9290Class 6 Accuracy 0.9523
+Epoch 55, Train Loss: 0.0628, Train Acc: 0.9775, LR: 0.001000
+Epoch 55, Val Loss: 0.2975, Val Acc: 0.9019
+Epoch 55, Confusion Matrix:
+[[476   9   1   0   0   1   2]
+ [ 16 475  28   7   1   0   2]
+ [  0  47 386  58   3   2   1]
+ [  0   1  39 601   8   6   2]
+ [  0   0   3  28 199  13   1]
+ [  0   0   1   2   2 296  23]
+ [  0   1   1   2   0   7 492]]
+Epoch 55, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.97      0.97       489
+           1       0.89      0.90      0.89       529
+           2       0.84      0.78      0.81       497
+           3       0.86      0.91      0.89       657
+           4       0.93      0.82      0.87       244
+           5       0.91      0.91      0.91       324
+           6       0.94      0.98      0.96       503
+
+    accuracy                           0.90      3243
+   macro avg       0.91      0.90      0.90      3243
+weighted avg       0.90      0.90      0.90      3243
+
+Class 0 Accuracy 0.9734Class 1 Accuracy 0.8979Class 2 Accuracy 0.7767Class 3 Accuracy 0.9148Class 4 Accuracy 0.8156Class 5 Accuracy 0.9136Class 6 Accuracy 0.9781
+Epoch 56, Train Loss: 0.0631, Train Acc: 0.9782, LR: 0.001000
+Epoch 56, Val Loss: 0.3098, Val Acc: 0.8970
+Epoch 56, Confusion Matrix:
+[[479   7   1   0   0   1   1]
+ [ 17 473  32   4   0   0   3]
+ [  0  59 383  49   3   2   1]
+ [  0   3  51 585  14   3   1]
+ [  0   1   4  20 212   7   0]
+ [  0   0   2   1   8 297  16]
+ [  1   0   1   3   0  18 480]]
+Epoch 56, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.98      0.97       489
+           1       0.87      0.89      0.88       529
+           2       0.81      0.77      0.79       497
+           3       0.88      0.89      0.89       657
+           4       0.89      0.87      0.88       244
+           5       0.91      0.92      0.91       324
+           6       0.96      0.95      0.96       503
+
+    accuracy                           0.90      3243
+   macro avg       0.90      0.90      0.90      3243
+weighted avg       0.90      0.90      0.90      3243
+
+Class 0 Accuracy 0.9796Class 1 Accuracy 0.8941Class 2 Accuracy 0.7706Class 3 Accuracy 0.8904Class 4 Accuracy 0.8689Class 5 Accuracy 0.9167Class 6 Accuracy 0.9543
+Epoch 57, Train Loss: 0.0550, Train Acc: 0.9810, LR: 0.001000
+Epoch 57, Val Loss: 0.3098, Val Acc: 0.9010
+Epoch 57, Confusion Matrix:
+[[482   6   1   0   0   0   0]
+ [ 25 455  40   4   0   0   5]
+ [  0  27 408  55   3   3   1]
+ [  0   1  59 588   4   4   1]
+ [  0   0   5  23 205  10   1]
+ [  0   0   1   0   2 306  15]
+ [  0   1   0   2   1  21 478]]
+Epoch 57, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.95      0.99      0.97       489
+           1       0.93      0.86      0.89       529
+           2       0.79      0.82      0.81       497
+           3       0.88      0.89      0.88       657
+           4       0.95      0.84      0.89       244
+           5       0.89      0.94      0.92       324
+           6       0.95      0.95      0.95       503
+
+    accuracy                           0.90      3243
+   macro avg       0.91      0.90      0.90      3243
+weighted avg       0.90      0.90      0.90      3243
+
+Class 0 Accuracy 0.9857Class 1 Accuracy 0.8601Class 2 Accuracy 0.8209Class 3 Accuracy 0.8950Class 4 Accuracy 0.8402Class 5 Accuracy 0.9444Class 6 Accuracy 0.9503
+Epoch 58, Train Loss: 0.0566, Train Acc: 0.9816, LR: 0.001000
+Epoch 58, Val Loss: 0.3131, Val Acc: 0.9038
+Epoch 58, Confusion Matrix:
+[[478  10   1   0   0   0   0]
+ [ 17 472  31   5   1   0   3]
+ [  0  39 394  58   5   1   0]
+ [  0   2  41 604   7   1   2]
+ [  0   1   4  23 206   9   1]
+ [  0   0   2   1   4 304  13]
+ [  0   1   0   2   1  26 473]]
+Epoch 58, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.98      0.97       489
+           1       0.90      0.89      0.90       529
+           2       0.83      0.79      0.81       497
+           3       0.87      0.92      0.89       657
+           4       0.92      0.84      0.88       244
+           5       0.89      0.94      0.91       324
+           6       0.96      0.94      0.95       503
+
+    accuracy                           0.90      3243
+   macro avg       0.91      0.90      0.90      3243
+weighted avg       0.90      0.90      0.90      3243
+
+Class 0 Accuracy 0.9775Class 1 Accuracy 0.8922Class 2 Accuracy 0.7928Class 3 Accuracy 0.9193Class 4 Accuracy 0.8443Class 5 Accuracy 0.9383Class 6 Accuracy 0.9404
+Epoch 59, Train Loss: 0.0561, Train Acc: 0.9816, LR: 0.001000
+Epoch 59, Val Loss: 0.3219, Val Acc: 0.9041
+Epoch 59, Confusion Matrix:
+[[476  11   1   0   0   0   1]
+ [ 16 457  44   6   1   0   5]
+ [  0  35 395  60   4   1   2]
+ [  0   1  36 607   9   3   1]
+ [  0   0   6  17 212   9   0]
+ [  0   0   1   2   3 307  11]
+ [  0   1   0   4   0  20 478]]
+Epoch 59, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.97      0.97       489
+           1       0.90      0.86      0.88       529
+           2       0.82      0.79      0.81       497
+           3       0.87      0.92      0.90       657
+           4       0.93      0.87      0.90       244
+           5       0.90      0.95      0.92       324
+           6       0.96      0.95      0.96       503
+
+    accuracy                           0.90      3243
+   macro avg       0.91      0.90      0.90      3243
+weighted avg       0.90      0.90      0.90      3243
+
+Class 0 Accuracy 0.9734Class 1 Accuracy 0.8639Class 2 Accuracy 0.7948Class 3 Accuracy 0.9239Class 4 Accuracy 0.8689Class 5 Accuracy 0.9475Class 6 Accuracy 0.9503
+Epoch 60, Train Loss: 0.0442, Train Acc: 0.9859, LR: 0.000100
+Epoch 60, Val Loss: 0.3069, Val Acc: 0.9075
+Epoch 60, Confusion Matrix:
+[[480   8   1   0   0   0   0]
+ [ 19 471  30   5   1   0   3]
+ [  0  42 393  54   6   1   1]
+ [  0   2  43 599   9   3   1]
+ [  0   1   5  17 212   8   1]
+ [  0   0   1   1   3 306  13]
+ [  0   1   0   2   1  17 482]]
+Epoch 60, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.98      0.97       489
+           1       0.90      0.89      0.89       529
+           2       0.83      0.79      0.81       497
+           3       0.88      0.91      0.90       657
+           4       0.91      0.87      0.89       244
+           5       0.91      0.94      0.93       324
+           6       0.96      0.96      0.96       503
+
+    accuracy                           0.91      3243
+   macro avg       0.91      0.91      0.91      3243
+weighted avg       0.91      0.91      0.91      3243
+
+Class 0 Accuracy 0.9816Class 1 Accuracy 0.8904Class 2 Accuracy 0.7907Class 3 Accuracy 0.9117Class 4 Accuracy 0.8689Class 5 Accuracy 0.9444Class 6 Accuracy 0.9583
+Epoch 61, Train Loss: 0.0384, Train Acc: 0.9887, LR: 0.000100
+Epoch 61, Val Loss: 0.2999, Val Acc: 0.9044
+Epoch 61, Confusion Matrix:
+[[479   9   1   0   0   0   0]
+ [ 16 472  35   4   0   0   2]
+ [  0  43 395  50   7   1   1]
+ [  0   2  48 592  11   3   1]
+ [  0   1   5  17 211   9   1]
+ [  0   0   1   2   2 305  14]
+ [  0   1   0   2   1  20 479]]
+Epoch 61, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.98      0.97       489
+           1       0.89      0.89      0.89       529
+           2       0.81      0.79      0.80       497
+           3       0.89      0.90      0.89       657
+           4       0.91      0.86      0.89       244
+           5       0.90      0.94      0.92       324
+           6       0.96      0.95      0.96       503
+
+    accuracy                           0.90      3243
+   macro avg       0.91      0.90      0.90      3243
+weighted avg       0.90      0.90      0.90      3243
+
+Class 0 Accuracy 0.9796Class 1 Accuracy 0.8922Class 2 Accuracy 0.7948Class 3 Accuracy 0.9011Class 4 Accuracy 0.8648Class 5 Accuracy 0.9414Class 6 Accuracy 0.9523
+Epoch 62, Train Loss: 0.0389, Train Acc: 0.9884, LR: 0.000100
+Epoch 62, Val Loss: 0.3003, Val Acc: 0.9050
+Epoch 62, Confusion Matrix:
+[[481   7   1   0   0   0   0]
+ [ 16 476  29   3   1   0   4]
+ [  0  50 387  51   7   1   1]
+ [  0   2  46 594  10   3   2]
+ [  0   1   5  18 209  10   1]
+ [  0   0   1   2   3 297  21]
+ [  0   1   0   2   0   9 491]]
+Epoch 62, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.98      0.98       489
+           1       0.89      0.90      0.89       529
+           2       0.83      0.78      0.80       497
+           3       0.89      0.90      0.90       657
+           4       0.91      0.86      0.88       244
+           5       0.93      0.92      0.92       324
+           6       0.94      0.98      0.96       503
+
+    accuracy                           0.91      3243
+   macro avg       0.91      0.90      0.90      3243
+weighted avg       0.90      0.91      0.90      3243
+
+Class 0 Accuracy 0.9836Class 1 Accuracy 0.8998Class 2 Accuracy 0.7787Class 3 Accuracy 0.9041Class 4 Accuracy 0.8566Class 5 Accuracy 0.9167Class 6 Accuracy 0.9761
+Epoch 63, Train Loss: 0.0355, Train Acc: 0.9900, LR: 0.000100
+Epoch 63, Val Loss: 0.3043, Val Acc: 0.9084
+Epoch 63, Confusion Matrix:
+[[480   8   1   0   0   0   0]
+ [ 16 468  36   5   0   0   4]
+ [  0  32 404  54   5   1   1]
+ [  0   1  43 604   5   3   1]
+ [  0   1   5  22 206   9   1]
+ [  0   0   1   2   3 300  18]
+ [  0   1   0   2   1  15 484]]
+Epoch 63, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.98      0.97       489
+           1       0.92      0.88      0.90       529
+           2       0.82      0.81      0.82       497
+           3       0.88      0.92      0.90       657
+           4       0.94      0.84      0.89       244
+           5       0.91      0.93      0.92       324
+           6       0.95      0.96      0.96       503
+
+    accuracy                           0.91      3243
+   macro avg       0.91      0.90      0.91      3243
+weighted avg       0.91      0.91      0.91      3243
+
+Class 0 Accuracy 0.9816Class 1 Accuracy 0.8847Class 2 Accuracy 0.8129Class 3 Accuracy 0.9193Class 4 Accuracy 0.8443Class 5 Accuracy 0.9259Class 6 Accuracy 0.9622
+Epoch 64, Train Loss: 0.0331, Train Acc: 0.9912, LR: 0.000100
+Epoch 64, Val Loss: 0.3025, Val Acc: 0.9029
+Epoch 64, Confusion Matrix:
+[[478  10   1   0   0   0   0]
+ [ 16 472  33   5   0   0   3]
+ [  0  41 403  46   5   1   1]
+ [  0   2  56 591   6   1   1]
+ [  0   1   6  23 206   7   1]
+ [  0   0   2   2   6 299  15]
+ [  0   1   1   3   1  18 479]]
+Epoch 64, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.98      0.97       489
+           1       0.90      0.89      0.89       529
+           2       0.80      0.81      0.81       497
+           3       0.88      0.90      0.89       657
+           4       0.92      0.84      0.88       244
+           5       0.92      0.92      0.92       324
+           6       0.96      0.95      0.96       503
+
+    accuracy                           0.90      3243
+   macro avg       0.91      0.90      0.90      3243
+weighted avg       0.90      0.90      0.90      3243
+
+Class 0 Accuracy 0.9775Class 1 Accuracy 0.8922Class 2 Accuracy 0.8109Class 3 Accuracy 0.8995Class 4 Accuracy 0.8443Class 5 Accuracy 0.9228Class 6 Accuracy 0.9523
+Epoch 65, Train Loss: 0.0378, Train Acc: 0.9890, LR: 0.000100
+Epoch 65, Val Loss: 0.3052, Val Acc: 0.9053
+Epoch 65, Confusion Matrix:
+[[479   9   1   0   0   0   0]
+ [ 15 470  34   5   1   0   4]
+ [  0  36 396  58   5   1   1]
+ [  0   2  40 604   7   3   1]
+ [  0   1   6  24 206   6   1]
+ [  0   0   1   2   3 303  15]
+ [  0   1   1   3   1  19 478]]
+Epoch 65, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.98      0.97       489
+           1       0.91      0.89      0.90       529
+           2       0.83      0.80      0.81       497
+           3       0.87      0.92      0.89       657
+           4       0.92      0.84      0.88       244
+           5       0.91      0.94      0.92       324
+           6       0.96      0.95      0.95       503
+
+    accuracy                           0.91      3243
+   macro avg       0.91      0.90      0.90      3243
+weighted avg       0.91      0.91      0.91      3243
+
+Class 0 Accuracy 0.9796Class 1 Accuracy 0.8885Class 2 Accuracy 0.7968Class 3 Accuracy 0.9193Class 4 Accuracy 0.8443Class 5 Accuracy 0.9352Class 6 Accuracy 0.9503
+Epoch 66, Train Loss: 0.0340, Train Acc: 0.9906, LR: 0.000100
+Epoch 66, Val Loss: 0.2967, Val Acc: 0.9066
+Epoch 66, Confusion Matrix:
+[[479   9   1   0   0   0   0]
+ [ 18 471  32   5   0   0   3]
+ [  0  39 405  46   5   1   1]
+ [  0   2  52 592   8   2   1]
+ [  0   1   6  18 212   6   1]
+ [  0   0   1   2   4 301  16]
+ [  0   1   1   2   1  18 480]]
+Epoch 66, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.98      0.97       489
+           1       0.90      0.89      0.90       529
+           2       0.81      0.81      0.81       497
+           3       0.89      0.90      0.90       657
+           4       0.92      0.87      0.89       244
+           5       0.92      0.93      0.92       324
+           6       0.96      0.95      0.96       503
+
+    accuracy                           0.91      3243
+   macro avg       0.91      0.91      0.91      3243
+weighted avg       0.91      0.91      0.91      3243
+
+Class 0 Accuracy 0.9796Class 1 Accuracy 0.8904Class 2 Accuracy 0.8149Class 3 Accuracy 0.9011Class 4 Accuracy 0.8689Class 5 Accuracy 0.9290Class 6 Accuracy 0.9543
+Epoch 67, Train Loss: 0.0328, Train Acc: 0.9908, LR: 0.000100
+Epoch 67, Val Loss: 0.2994, Val Acc: 0.9069
+Epoch 67, Confusion Matrix:
+[[480   8   1   0   0   0   0]
+ [ 19 468  33   5   0   0   4]
+ [  0  35 410  44   5   1   2]
+ [  0   2  48 589  13   3   2]
+ [  0   1   5  18 211   8   1]
+ [  0   0   1   2   3 303  15]
+ [  0   1   0   2   1  19 480]]
+Epoch 67, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.98      0.97       489
+           1       0.91      0.88      0.90       529
+           2       0.82      0.82      0.82       497
+           3       0.89      0.90      0.89       657
+           4       0.91      0.86      0.88       244
+           5       0.91      0.94      0.92       324
+           6       0.95      0.95      0.95       503
+
+    accuracy                           0.91      3243
+   macro avg       0.91      0.91      0.91      3243
+weighted avg       0.91      0.91      0.91      3243
+
+Class 0 Accuracy 0.9816Class 1 Accuracy 0.8847Class 2 Accuracy 0.8249Class 3 Accuracy 0.8965Class 4 Accuracy 0.8648Class 5 Accuracy 0.9352Class 6 Accuracy 0.9543
+Epoch 68, Train Loss: 0.0324, Train Acc: 0.9914, LR: 0.000100
+Epoch 68, Val Loss: 0.2995, Val Acc: 0.9056
+Epoch 68, Confusion Matrix:
+[[480   8   1   0   0   0   0]
+ [ 17 473  29   5   1   0   4]
+ [  0  39 401  51   5   1   0]
+ [  0   3  45 594  11   3   1]
+ [  0   1   6  18 209   9   1]
+ [  0   0   1   1   4 304  14]
+ [  0   1   1   3   1  21 476]]
+Epoch 68, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.98      0.97       489
+           1       0.90      0.89      0.90       529
+           2       0.83      0.81      0.82       497
+           3       0.88      0.90      0.89       657
+           4       0.90      0.86      0.88       244
+           5       0.90      0.94      0.92       324
+           6       0.96      0.95      0.95       503
+
+    accuracy                           0.91      3243
+   macro avg       0.91      0.90      0.90      3243
+weighted avg       0.91      0.91      0.91      3243
+
+Class 0 Accuracy 0.9816Class 1 Accuracy 0.8941Class 2 Accuracy 0.8068Class 3 Accuracy 0.9041Class 4 Accuracy 0.8566Class 5 Accuracy 0.9383Class 6 Accuracy 0.9463
+Epoch 69, Train Loss: 0.0336, Train Acc: 0.9909, LR: 0.000100
+Epoch 69, Val Loss: 0.3032, Val Acc: 0.9038
+Epoch 69, Confusion Matrix:
+[[482   6   1   0   0   0   0]
+ [ 19 465  36   5   0   0   4]
+ [  0  35 404  50   6   1   1]
+ [  0   2  48 598   5   3   1]
+ [  0   1   6  22 202  12   1]
+ [  0   0   1   2   3 298  20]
+ [  0   1   0   2   0  18 482]]
+Epoch 69, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.99      0.97       489
+           1       0.91      0.88      0.90       529
+           2       0.81      0.81      0.81       497
+           3       0.88      0.91      0.90       657
+           4       0.94      0.83      0.88       244
+           5       0.90      0.92      0.91       324
+           6       0.95      0.96      0.95       503
+
+    accuracy                           0.90      3243
+   macro avg       0.91      0.90      0.90      3243
+weighted avg       0.90      0.90      0.90      3243
+
+Class 0 Accuracy 0.9857Class 1 Accuracy 0.8790Class 2 Accuracy 0.8129Class 3 Accuracy 0.9102Class 4 Accuracy 0.8279Class 5 Accuracy 0.9198Class 6 Accuracy 0.9583
+Epoch 70, Train Loss: 0.0332, Train Acc: 0.9905, LR: 0.000100
+Epoch 70, Val Loss: 0.3052, Val Acc: 0.9056
+Epoch 70, Confusion Matrix:
+[[481   7   1   0   0   0   0]
+ [ 20 464  33   6   1   1   4]
+ [  0  36 402  51   6   1   1]
+ [  0   1  46 596  11   2   1]
+ [  0   0   6  19 213   5   1]
+ [  0   0   1   2   7 294  20]
+ [  0   1   1   2   1  11 487]]
+Epoch 70, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.98      0.97       489
+           1       0.91      0.88      0.89       529
+           2       0.82      0.81      0.81       497
+           3       0.88      0.91      0.89       657
+           4       0.89      0.87      0.88       244
+           5       0.94      0.91      0.92       324
+           6       0.95      0.97      0.96       503
+
+    accuracy                           0.91      3243
+   macro avg       0.91      0.90      0.91      3243
+weighted avg       0.91      0.91      0.91      3243
+
+Class 0 Accuracy 0.9836Class 1 Accuracy 0.8771Class 2 Accuracy 0.8089Class 3 Accuracy 0.9072Class 4 Accuracy 0.8730Class 5 Accuracy 0.9074Class 6 Accuracy 0.9682
+Epoch 71, Train Loss: 0.0359, Train Acc: 0.9894, LR: 0.000100
+Epoch 71, Val Loss: 0.3034, Val Acc: 0.9069
+Epoch 71, Confusion Matrix:
+[[480   8   1   0   0   0   0]
+ [ 17 473  30   4   1   1   3]
+ [  0  44 396  50   6   1   0]
+ [  0   2  39 599  13   3   1]
+ [  0   0   5  16 212  10   1]
+ [  0   0   1   2   3 304  14]
+ [  0   1   0   3   1  21 477]]
+Epoch 71, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.98      0.97       489
+           1       0.90      0.89      0.89       529
+           2       0.84      0.80      0.82       497
+           3       0.89      0.91      0.90       657
+           4       0.90      0.87      0.88       244
+           5       0.89      0.94      0.92       324
+           6       0.96      0.95      0.95       503
+
+    accuracy                           0.91      3243
+   macro avg       0.91      0.91      0.91      3243
+weighted avg       0.91      0.91      0.91      3243
+
+Class 0 Accuracy 0.9816Class 1 Accuracy 0.8941Class 2 Accuracy 0.7968Class 3 Accuracy 0.9117Class 4 Accuracy 0.8689Class 5 Accuracy 0.9383Class 6 Accuracy 0.9483
+Epoch 72, Train Loss: 0.0317, Train Acc: 0.9907, LR: 0.000100
+Epoch 72, Val Loss: 0.3011, Val Acc: 0.9053
+Epoch 72, Confusion Matrix:
+[[478   8   1   0   0   1   1]
+ [ 17 473  30   5   0   1   3]
+ [  0  40 396  54   5   1   1]
+ [  0   2  42 603   6   3   1]
+ [  0   1   6  25 202   9   1]
+ [  0   0   1   2   4 299  18]
+ [  0   1   1   3   1  12 485]]
+Epoch 72, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.98      0.97       489
+           1       0.90      0.89      0.90       529
+           2       0.83      0.80      0.81       497
+           3       0.87      0.92      0.89       657
+           4       0.93      0.83      0.87       244
+           5       0.92      0.92      0.92       324
+           6       0.95      0.96      0.96       503
+
+    accuracy                           0.91      3243
+   macro avg       0.91      0.90      0.90      3243
+weighted avg       0.91      0.91      0.90      3243
+
+Class 0 Accuracy 0.9775Class 1 Accuracy 0.8941Class 2 Accuracy 0.7968Class 3 Accuracy 0.9178Class 4 Accuracy 0.8279Class 5 Accuracy 0.9228Class 6 Accuracy 0.9642
+Epoch 73, Train Loss: 0.0322, Train Acc: 0.9907, LR: 0.000100
+Epoch 73, Val Loss: 0.3126, Val Acc: 0.9050
+Epoch 73, Confusion Matrix:
+[[480   7   1   0   0   1   0]
+ [ 20 467  32   6   0   1   3]
+ [  0  36 402  51   6   1   1]
+ [  0   1  45 599   8   3   1]
+ [  0   0   6  22 205  10   1]
+ [  0   0   1   2   4 304  13]
+ [  0   1   1   3   1  19 478]]
+Epoch 73, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.98      0.97       489
+           1       0.91      0.88      0.90       529
+           2       0.82      0.81      0.82       497
+           3       0.88      0.91      0.89       657
+           4       0.92      0.84      0.88       244
+           5       0.90      0.94      0.92       324
+           6       0.96      0.95      0.96       503
+
+    accuracy                           0.91      3243
+   macro avg       0.91      0.90      0.90      3243
+weighted avg       0.91      0.91      0.90      3243
+
+Class 0 Accuracy 0.9816Class 1 Accuracy 0.8828Class 2 Accuracy 0.8089Class 3 Accuracy 0.9117Class 4 Accuracy 0.8402Class 5 Accuracy 0.9383Class 6 Accuracy 0.9503
+Epoch 74, Train Loss: 0.0286, Train Acc: 0.9921, LR: 0.000100
+Epoch 74, Val Loss: 0.3078, Val Acc: 0.9041
+Epoch 74, Confusion Matrix:
+[[479   7   1   0   0   1   1]
+ [ 19 470  29   5   1   1   4]
+ [  0  43 397  49   6   1   1]
+ [  0   1  44 597  11   3   1]
+ [  0   1   6  18 210   8   1]
+ [  0   0   1   1   5 302  15]
+ [  0   1   1   3   1  20 477]]
+Epoch 74, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.98      0.97       489
+           1       0.90      0.89      0.89       529
+           2       0.83      0.80      0.81       497
+           3       0.89      0.91      0.90       657
+           4       0.90      0.86      0.88       244
+           5       0.90      0.93      0.92       324
+           6       0.95      0.95      0.95       503
+
+    accuracy                           0.90      3243
+   macro avg       0.90      0.90      0.90      3243
+weighted avg       0.90      0.90      0.90      3243
+
+Class 0 Accuracy 0.9796Class 1 Accuracy 0.8885Class 2 Accuracy 0.7988Class 3 Accuracy 0.9087Class 4 Accuracy 0.8607Class 5 Accuracy 0.9321Class 6 Accuracy 0.9483
+Epoch 75, Train Loss: 0.0326, Train Acc: 0.9906, LR: 0.000100
+Epoch 75, Val Loss: 0.3018, Val Acc: 0.9050
+Epoch 75, Confusion Matrix:
+[[480   8   1   0   0   0   0]
+ [ 17 474  27   6   1   1   3]
+ [  0  45 405  40   6   1   0]
+ [  0   3  53 584  13   3   1]
+ [  0   0   6  17 212   8   1]
+ [  0   0   1   1   6 301  15]
+ [  0   1   1   3   1  18 479]]
+Epoch 75, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.98      0.97       489
+           1       0.89      0.90      0.89       529
+           2       0.82      0.81      0.82       497
+           3       0.90      0.89      0.89       657
+           4       0.89      0.87      0.88       244
+           5       0.91      0.93      0.92       324
+           6       0.96      0.95      0.96       503
+
+    accuracy                           0.91      3243
+   macro avg       0.90      0.90      0.90      3243
+weighted avg       0.90      0.91      0.90      3243
+
+Class 0 Accuracy 0.9816Class 1 Accuracy 0.8960Class 2 Accuracy 0.8149Class 3 Accuracy 0.8889Class 4 Accuracy 0.8689Class 5 Accuracy 0.9290Class 6 Accuracy 0.9523
+Epoch 76, Train Loss: 0.0324, Train Acc: 0.9907, LR: 0.000100
+Epoch 76, Val Loss: 0.3137, Val Acc: 0.9087
+Epoch 76, Confusion Matrix:
+[[479   8   1   0   0   0   1]
+ [ 15 471  35   5   0   0   3]
+ [  0  35 404  51   5   1   1]
+ [  0   1  41 606   7   1   1]
+ [  0   0   6  21 207   9   1]
+ [  0   0   1   1   6 303  13]
+ [  0   1   1   3   1  20 477]]
+Epoch 76, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.98      0.97       489
+           1       0.91      0.89      0.90       529
+           2       0.83      0.81      0.82       497
+           3       0.88      0.92      0.90       657
+           4       0.92      0.85      0.88       244
+           5       0.91      0.94      0.92       324
+           6       0.96      0.95      0.95       503
+
+    accuracy                           0.91      3243
+   macro avg       0.91      0.91      0.91      3243
+weighted avg       0.91      0.91      0.91      3243
+
+Class 0 Accuracy 0.9796Class 1 Accuracy 0.8904Class 2 Accuracy 0.8129Class 3 Accuracy 0.9224Class 4 Accuracy 0.8484Class 5 Accuracy 0.9352Class 6 Accuracy 0.9483
+Epoch 77, Train Loss: 0.0314, Train Acc: 0.9914, LR: 0.000100
+Epoch 77, Val Loss: 0.3071, Val Acc: 0.9047
+Epoch 77, Confusion Matrix:
+[[481   7   1   0   0   0   0]
+ [ 16 474  31   4   0   0   4]
+ [  0  43 403  43   6   1   1]
+ [  0   2  52 588  11   3   1]
+ [  0   1   5  18 207  12   1]
+ [  0   0   1   2   4 302  15]
+ [  0   1   1   2   1  19 479]]
+Epoch 77, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.98      0.98       489
+           1       0.90      0.90      0.90       529
+           2       0.82      0.81      0.81       497
+           3       0.89      0.89      0.89       657
+           4       0.90      0.85      0.88       244
+           5       0.90      0.93      0.91       324
+           6       0.96      0.95      0.95       503
+
+    accuracy                           0.90      3243
+   macro avg       0.90      0.90      0.90      3243
+weighted avg       0.90      0.90      0.90      3243
+
+Class 0 Accuracy 0.9836Class 1 Accuracy 0.8960Class 2 Accuracy 0.8109Class 3 Accuracy 0.8950Class 4 Accuracy 0.8484Class 5 Accuracy 0.9321Class 6 Accuracy 0.9523
+Epoch 78, Train Loss: 0.0308, Train Acc: 0.9916, LR: 0.000100
+Epoch 78, Val Loss: 0.3122, Val Acc: 0.9032
+Epoch 78, Confusion Matrix:
+[[480   8   1   0   0   0   0]
+ [ 18 467  34   6   0   0   4]
+ [  0  37 395  57   6   1   1]
+ [  0   1  41 604   7   3   1]
+ [  0   1   5  24 202  11   1]
+ [  0   0   1   2   5 297  19]
+ [  0   1   1   3   0  14 484]]
+Epoch 78, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.98      0.97       489
+           1       0.91      0.88      0.89       529
+           2       0.83      0.79      0.81       497
+           3       0.87      0.92      0.89       657
+           4       0.92      0.83      0.87       244
+           5       0.91      0.92      0.91       324
+           6       0.95      0.96      0.96       503
+
+    accuracy                           0.90      3243
+   macro avg       0.91      0.90      0.90      3243
+weighted avg       0.90      0.90      0.90      3243
+
+Class 0 Accuracy 0.9816Class 1 Accuracy 0.8828Class 2 Accuracy 0.7948Class 3 Accuracy 0.9193Class 4 Accuracy 0.8279Class 5 Accuracy 0.9167Class 6 Accuracy 0.9622
+Epoch 79, Train Loss: 0.0294, Train Acc: 0.9927, LR: 0.000100
+Epoch 79, Val Loss: 0.3129, Val Acc: 0.9063
+Epoch 79, Confusion Matrix:
+[[480   8   1   0   0   0   0]
+ [ 16 471  31   6   1   1   3]
+ [  0  36 402  51   5   1   2]
+ [  0   1  44 595  13   3   1]
+ [  0   0   5  18 212   8   1]
+ [  0   0   2   1   4 304  13]
+ [  0   1   0   2   1  24 475]]
+Epoch 79, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.98      0.97       489
+           1       0.91      0.89      0.90       529
+           2       0.83      0.81      0.82       497
+           3       0.88      0.91      0.89       657
+           4       0.90      0.87      0.88       244
+           5       0.89      0.94      0.91       324
+           6       0.96      0.94      0.95       503
+
+    accuracy                           0.91      3243
+   macro avg       0.91      0.91      0.91      3243
+weighted avg       0.91      0.91      0.91      3243
+
+Class 0 Accuracy 0.9816Class 1 Accuracy 0.8904Class 2 Accuracy 0.8089Class 3 Accuracy 0.9056Class 4 Accuracy 0.8689Class 5 Accuracy 0.9383Class 6 Accuracy 0.9443
+Epoch 80, Train Loss: 0.0300, Train Acc: 0.9914, LR: 0.000100
+Epoch 80, Val Loss: 0.3051, Val Acc: 0.9050
+Epoch 80, Confusion Matrix:
+[[481   7   1   0   0   0   0]
+ [ 18 470  30   6   1   0   4]
+ [  0  44 394  52   5   1   1]
+ [  0   2  46 597   9   2   1]
+ [  0   0   6  20 211   6   1]
+ [  0   0   2   2   5 299  16]
+ [  0   1   1   2   1  15 483]]
+Epoch 80, Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.98      0.97       489
+           1       0.90      0.89      0.89       529
+           2       0.82      0.79      0.81       497
+           3       0.88      0.91      0.89       657
+           4       0.91      0.86      0.89       244
+           5       0.93      0.92      0.92       324
+           6       0.95      0.96      0.96       503
+
+    accuracy                           0.91      3243
+   macro avg       0.91      0.90      0.90      3243
+weighted avg       0.90      0.91      0.90      3243
+
+Class 0 Accuracy 0.9836Class 1 Accuracy 0.8885Class 2 Accuracy 0.7928Class 3 Accuracy 0.9087Class 4 Accuracy 0.8648Class 5 Accuracy 0.9228Class 6 Accuracy 0.9602
+Test Loss: 0.3137, Test Acc: 0.9087
+Confusion Matrix:
+[[479   8   1   0   0   0   1]
+ [ 15 471  35   5   0   0   3]
+ [  0  35 404  51   5   1   1]
+ [  0   1  41 606   7   1   1]
+ [  0   0   6  21 207   9   1]
+ [  0   0   1   1   6 303  13]
+ [  0   1   1   3   1  20 477]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.98      0.97       489
+           1       0.91      0.89      0.90       529
+           2       0.83      0.81      0.82       497
+           3       0.88      0.92      0.90       657
+           4       0.92      0.85      0.88       244
+           5       0.91      0.94      0.92       324
+           6       0.96      0.95      0.95       503
+
+    accuracy                           0.91      3243
+   macro avg       0.91      0.91      0.91      3243
+weighted avg       0.91      0.91      0.91      3243
+
+Class 0 Accuracy 0.9796Class 1 Accuracy 0.8904Class 2 Accuracy 0.8129Class 3 Accuracy 0.9224Class 4 Accuracy 0.8484Class 5 Accuracy 0.9352Class 6 Accuracy 0.9483
