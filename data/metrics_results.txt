@@ -1,0 +1,104 @@
+Model: ResNetRS50
+Accuracy: 0.8859
+Recall: 0.8829
+Precision: 0.8871
+F1-score: 0.8845
+
+----------------------------------------
+
+Model: ResNetRS50-SSL-85
+Accuracy: 0.8930
+Recall: 0.8850
+Precision: 0.8945
+F1-score: 0.8893
+
+----------------------------------------
+
+Model: ResNetRS50-SSL-875
+Accuracy: 0.8828
+Recall: 0.8723
+Precision: 0.8891
+F1-score: 0.8794
+
+----------------------------------------
+
+Model: ResNetRS50-SSL-90
+Accuracy: 0.8938
+Recall: 0.8873
+Precision: 0.8973
+F1-score: 0.8917
+
+----------------------------------------
+
+Model: ResNetRS50-SSL-925
+Accuracy: 0.8934
+Recall: 0.8850
+Precision: 0.8995
+F1-score: 0.8912
+
+----------------------------------------
+
+Model: ResNetRS50-SSL-95
+Accuracy: 0.8912
+Recall: 0.8825
+Precision: 0.8940
+F1-score: 0.8877
+
+----------------------------------------
+
+Model: C-ResNetRS50-SSL
+Accuracy: 0.8991
+Recall: 0.8923
+Precision: 0.9034
+F1-score: 0.8971
+
+----------------------------------------
+
+Model: CO-ResNetRS50-SSL
+Accuracy: 0.9031
+Recall: 0.8987
+Precision: 0.9053
+F1-score: 0.9017
+
+----------------------------------------
+
+Model: ConvNext
+Accuracy: 0.8626
+Recall: 0.8489
+Precision: 0.8574
+F1-score: 0.8524
+
+----------------------------------------
+
+Model: ShuffleNet
+Accuracy: 0.8692
+Recall: 0.8524
+Precision: 0.8729
+F1-score: 0.8598
+
+----------------------------------------
+
+Model: EfficientNet
+Accuracy: 0.9042
+Recall: 0.8940
+Precision: 0.9010
+F1-score: 0.8971
+
+----------------------------------------
+
+Model: AlexNet
+Accuracy: 0.8297
+Recall: 0.8159
+Precision: 0.8180
+F1-score: 0.8168
+
+----------------------------------------
+
+Model: VGG
+Accuracy: 0.8203
+Recall: 0.8049
+Precision: 0.8212
+F1-score: 0.8115
+
+----------------------------------------
+
