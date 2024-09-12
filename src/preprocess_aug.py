@@ -5,6 +5,8 @@ from torchvision import transforms
 from torch.utils.data import DataLoader
 from torchvision.datasets.folder import default_loader
 import os
+from collections import Counter
+import random
 
 class CustomDataset(torch.utils.data.Dataset):
     def __init__(self, dataframe, transform=None):
@@ -56,10 +58,46 @@ def count_labels(dataset):
             label_count[label] = 1
     return label_count
 
+
+def augment_data(df, label_column=None, min_images=100, transform=None, is_unlabeled=False):
+    augment_rows = []
+    
+    if is_unlabeled:
+        for _, row in df.iterrows():
+            augment_image_name = row[0]
+            img_path = os.path.join('../../Rice2/gs_img/', augment_image_name + '.jpeg')
+            for _ in range(4):
+                image = default_loader(img_path)
+                if transform:
+                    image = transform(image)
+                augment_rows.append((augment_image_name, None))  # 无标签数据集只需返回图像和UUID
+    else:
+        label_counts = Counter(df[label_column])
+        for label, count in label_counts.items():
+            if count < min_images:
+                augment_count = min_images - count
+                label_df = df[df[label_column] == label]
+
+                for _ in range(augment_count):
+                    sample = label_df.sample(1).iloc[0]
+                    augment_image_name = sample.iloc[0]
+                    img_path = os.path.join('../../Rice2/gs_img/', augment_image_name + '.jpeg')
+                    image = default_loader(img_path)
+
+                    if transform:
+                        image = transform(image)
+
+                    augment_rows.append((augment_image_name, label))
+
+    augment_df = pd.DataFrame(augment_rows, columns=df.columns)
+    df = pd.concat([df, augment_df], ignore_index=True)
+    return df
+
+
 def load_data(args):
     csv_file = './clean_data.csv'
     df = pd.read_csv(csv_file)
-    # df = pd.read_csv(csv_file, dtype={'image_uuid': str})
+
 
     # 确保每个类别都划分30%数据到无标签数据集中
     labeled_df, unlabeled_df = train_test_split(df, test_size=0.3, random_state=36, stratify=df['growth_stage_code'])
@@ -67,6 +105,18 @@ def load_data(args):
     train_df, test_val_df = train_test_split(labeled_df, test_size=0.3, random_state=36, stratify=labeled_df['growth_stage_code'])
     val_df, test_df = train_test_split(test_val_df, test_size=0.5, random_state=36, stratify=test_val_df['growth_stage_code'])
 
+    transform_augment = transforms.Compose([
+        transforms.RandomRotation(degrees=15),
+        transforms.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2, hue=0.1),
+        transforms.RandomHorizontalFlip(),
+        transforms.RandomApply([transforms.RandomAffine(degrees=0, translate=(0.1, 0.1))], p=0.5),
+        transforms.RandomApply([transforms.GaussianBlur(kernel_size=3)], p=0.2),
+        transforms.RandomApply([transforms.Grayscale(num_output_channels=3)], p=0.1),
+        transforms.ToTensor()
+    ])
+    train_df = augment_data(train_df, label_column='growth_stage_code', min_images=1500, transform=transform_augment)
+    # 对无标签数据进行扩增，不需要使用min_images
+    unlabeled_df = augment_data(unlabeled_df, transform=transform_augment, is_unlabeled=True)
 
     transform_train = transforms.Compose([
         transforms.Resize(args.input_size),
@@ -75,6 +125,7 @@ def load_data(args):
         transforms.ToTensor(),
         transforms.Normalize((0.5071, 0.4865, 0.4409), (0.2673, 0.2564, 0.2762))
     ])
+
 
     transform_unlabeled = transform_train  # 使用相同的数据增强策略
 
@@ -94,7 +145,7 @@ def load_data(args):
     unlabeled_dataset = UnlableDataset(unlabeled_df, transform=transform_unlabeled)
 
     # 创建数据加载器
-    train_loader = DataLoader(train_dataset, batch_size=args.batch_size, shuffle=True, drop_last=True)
+    train_loader = DataLoader(train_dataset, batch_size=args.batch_size, shuffle=True)
     val_loader = DataLoader(val_dataset, batch_size=args.batch_size, shuffle=False)
     test_loader = DataLoader(test_dataset, batch_size=args.batch_size, shuffle=False)
     unlabeled_loader = DataLoader(unlabeled_dataset, batch_size=args.batch_size, shuffle=False)
@@ -119,6 +170,3 @@ def load_data(args):
     print("无标签数据集中图像的数量：", unlabeled_sample_count)
 
     return train_loader, val_loader, test_loader, unlabeled_loader
-
-
-
