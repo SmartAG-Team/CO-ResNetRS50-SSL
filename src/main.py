@@ -5,15 +5,9 @@ import argparse
 import torch.optim as optim
 import matplotlib.pyplot as plt
 from tqdm import tqdm
-# from torchvision.models.shufflenetv2 import shufflenet_v2_x1_0
 # from model.C_ResNetRS50.ResNetRS import ResNet
 # from model.CO_ResNetRS50.ResNetRS import ResNet
 from model.ResNetRS50.ResNetRS import ResNet
-# from torchvision.models import vgg16
-# from model.AlexNet import AlexNet
-# from model.EfficientNet import efficientnet_b0
-# from model.convnext import convnext_base
-
 from preprocess import load_data
 from torch.optim.lr_scheduler import _LRScheduler
 from sklearn.metrics import confusion_matrix, classification_report
@@ -67,11 +61,6 @@ def main(args):
 
 
     model=ResNet.build_model("resnetrs50").to(device)
-    # model = shufflenet_v2_x1_0(num_classes=7).to(device)
-    # model = vgg16(weights=None, num_classes=7).to(device)
-    # model = AlexNet(num_classes=7).to(device)
-    # model = efficientnet_b0(num_classes=7).to(device)
-    # model = convnext_base(num_classes=7).to(device)
 
     optimizer = optim.SGD(model.parameters(), lr=args.learning_rate, weight_decay=5e-4, momentum=0.9)
     criterion = nn.CrossEntropyLoss().to(device)
