@@ -6,6 +6,14 @@ F1-score: 0.8845
 
 ----------------------------------------
 
+Model: ResNetRS50-Aug
+Accuracy: 0.8894
+Recall: 0.8811
+Precision: 0.8928
+F1-score: 0.8863
+
+----------------------------------------
+
 Model: ResNetRS50-SSL-85
 Accuracy: 0.8930
 Recall: 0.8850
@@ -46,6 +54,22 @@ F1-score: 0.8877
 
 ----------------------------------------
 
+Model: ResNetRS50-SSL-LabelAug
+Accuracy: 0.8912
+Recall: 0.8790
+Precision: 0.8929
+F1-score: 0.8850
+
+----------------------------------------
+
+Model: ResNetRS50-SSL-AllAug
+Accuracy: 0.8930
+Recall: 0.8892
+Precision: 0.8955
+F1-score: 0.8919
+
+----------------------------------------
+
 Model: C-ResNetRS50-SSL
 Accuracy: 0.8991
 Recall: 0.8923
@@ -61,44 +85,3 @@ Precision: 0.9053
 F1-score: 0.9017
 
 ----------------------------------------
-
-Model: ConvNext
-Accuracy: 0.8626
-Recall: 0.8489
-Precision: 0.8574
-F1-score: 0.8524
-
-----------------------------------------
-
-Model: ShuffleNet
-Accuracy: 0.8692
-Recall: 0.8524
-Precision: 0.8729
-F1-score: 0.8598
-
-----------------------------------------
-
-Model: EfficientNet
-Accuracy: 0.9042
-Recall: 0.8940
-Precision: 0.9010
-F1-score: 0.8971
-
-----------------------------------------
-
-Model: AlexNet
-Accuracy: 0.8297
-Recall: 0.8159
-Precision: 0.8180
-F1-score: 0.8168
-
-----------------------------------------
-
-Model: VGG
-Accuracy: 0.8203
-Recall: 0.8049
-Precision: 0.8212
-F1-score: 0.8115
-
-----------------------------------------
-

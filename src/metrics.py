@@ -33,6 +33,14 @@ ResNetRS50 = np.array([[330, 12, 1, 0, 0, 1, 1],
                      [0, 1, 3, 1, 6, 222, 6],
                      [1, 0, 4, 3, 1, 13, 322]])
 
+ResNetRS50_Aug = np.array([[331, 12, 0, 1, 0, 1, 0],
+                        [11, 355, 22, 1, 0, 0, 0],
+                        [0, 26, 258, 38, 2, 0, 0],
+                        [0, 2, 40, 404, 9, 0, 2],
+                        [0, 2, 7, 24, 133, 5, 1],
+                        [1, 2, 3, 1, 5, 218, 9],
+                        [0, 1, 4, 6, 1, 12, 320]])
+
 
 ResNetRS50_SSL_85 = np.array([[331, 13, 0, 1, 0, 0, 0],
                      [16, 356, 15, 2, 0, 0, 0],
@@ -78,6 +86,21 @@ ResNetRS50_SSL_95 = np.array([[330, 14, 0, 1, 0, 0, 0],
                      [1, 1, 5, 2, 8, 213, 9],
                      [1, 3, 5, 2, 2, 5, 326]])
 
+ResNetRS50_SSL_LabelAug = np.array([[331, 12, 0, 1, 0, 1, 0],
+                        [13, 351, 23, 2, 0, 0, 0],
+                        [0, 19, 261, 40, 4, 0, 0],
+                        [0, 2, 32, 410, 9, 2, 2],
+                        [0, 0, 8, 31, 126, 6, 1],
+                        [0, 1, 3, 2, 7, 215, 11],
+                        [0, 0, 3, 4, 0, 8, 329]])
+
+ResNetRS50_SSL_AllAug = np.array([[330, 14, 1, 0, 0, 0, 0],
+                        [18, 341, 25, 1, 0, 1, 3],
+                        [1, 17, 247, 55, 4, 0, 0],
+                        [0, 5, 21, 418, 10, 1, 2],
+                        [0, 0, 6, 16, 146, 3, 1],
+                        [0, 2, 1, 1, 6, 220, 9],
+                        [0, 4, 1, 4, 1, 9, 325]])
 
 
 C_ResNetRS50_SSL = np.array([[330, 13, 0, 1, 0, 0, 1],
@@ -97,56 +120,13 @@ CO_ResNetRS50_SSL = np.array([[333, 10, 1, 0, 0, 0, 1],
                           [0, 1, 4, 1, 3, 222, 8],
                           [0, 1, 3, 3, 0, 13, 324]])
 
-ConvNext = np.array([[333, 11, 0, 1, 0, 0, 0],
-                     [19, 337, 30, 2, 0, 0, 1],
-                     [0, 18, 261, 37, 7, 1, 0],
-                     [0, 3, 44, 382, 21, 5, 2],
-                     [0, 2, 7, 42, 113, 7, 1],
-                     [0, 1, 3, 4, 9, 208, 14],
-                     [0, 2, 2, 4, 0, 12, 324]])
-
-ShuffleNet = np.array([[329, 13, 0, 0, 0, 2, 1],
-                       [11, 342, 29, 2, 0, 3, 2],
-                       [0, 17, 251, 47, 5, 4, 0],
-                       [0, 3, 37, 407, 6, 1, 3],
-                       [0, 2, 13, 37, 112, 7, 1],
-                       [1, 2, 5, 3, 4, 212, 12],
-                       [1, 1, 2, 3, 0, 17, 320]])
-
-EfficientNet = np.array([[433, 10, 1, 0, 0, 0, 1],
-                         [13, 349, 24, 1, 0, 2, 0],
-                         [0, 20, 271, 28, 4, 1, 0],
-                         [0, 6, 33, 407, 9, 0, 2],
-                         [0, 0, 5, 23, 136, 8, 0],
-                         [1, 0, 2, 1, 6, 219, 10],
-                         [0, 1, 3, 3, 0, 9, 328]])
-
-AlexNet = np.array([[325, 17, 1, 0, 0, 1, 1],
-                    [15, 332, 34, 2, 0, 1, 5],
-                    [0, 24, 232, 48, 12, 7, 1],
-                    [0, 1, 43, 367, 34, 8, 4],
-                    [0, 1, 17, 39, 109, 6, 0],
-                    [0, 4, 5, 3, 9, 204, 14],
-                    [1, 3, 7, 4, 1, 17, 331]])
-
-VGG = np.array([[324, 19, 1, 0, 0, 0, 1],
-                [18, 316, 43, 5, 0, 2, 5],
-                [1, 18, 226, 73, 6, 0, 0],
-                [0, 4, 42, 380, 21, 4, 6],
-                [0, 2, 17, 38,105, 8, 2],
-                [2, 2, 6, 5, 7, 202, 15],
-                [1, 6, 1, 10, 1, 16, 309]])
-
-
-
 
 
 # Models list
-models = [ResNetRS50, ResNetRS50_SSL_85, ResNetRS50_SSL_875, ResNetRS50_SSL_90, ResNetRS50_SSL_925, ResNetRS50_SSL_95,
-            C_ResNetRS50_SSL, CO_ResNetRS50_SSL, ConvNext, ShuffleNet, EfficientNet, AlexNet, VGG]
-model_names = ["ResNetRS50", "ResNetRS50-SSL-85", "ResNetRS50-SSL-875", "ResNetRS50-SSL-90", "ResNetRS50-SSL-925", "ResNetRS50-SSL-95", 
-               "C-ResNetRS50-SSL", "CO-ResNetRS50-SSL", "ConvNext", "ShuffleNet", "EfficientNet",
-               "AlexNet", "VGG"]
+models = [ResNetRS50, ResNetRS50_Aug, ResNetRS50_SSL_85, ResNetRS50_SSL_875, ResNetRS50_SSL_90, ResNetRS50_SSL_925, ResNetRS50_SSL_95,
+            ResNetRS50_SSL_LabelAug, ResNetRS50_SSL_AllAug, C_ResNetRS50_SSL, CO_ResNetRS50_SSL]
+model_names = ["ResNetRS50", "ResNetRS50-Aug", "ResNetRS50-SSL-85", "ResNetRS50-SSL-875", "ResNetRS50-SSL-90", "ResNetRS50-SSL-925", "ResNetRS50-SSL-95", 
+               "ResNetRS50-SSL-LabelAug", "ResNetRS50-SSL-AllAug", "C-ResNetRS50-SSL", "CO-ResNetRS50-SSL"]
 
 # Calculate metrics for each model
 with open("D:/Desktop/metrics_results.txt", "w") as file:
