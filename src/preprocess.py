@@ -16,7 +16,7 @@ class CustomDataset(torch.utils.data.Dataset):
         return len(self.dataframe)
 
     def __getitem__(self, idx):
-        img_name = os.path.join('./RiceImagesData/', self.dataframe.iloc[idx, 0] + '.jpeg')
+        img_name = os.path.join('./data/RiceImagesData/', self.dataframe.iloc[idx, 0] + '.jpeg')
         image = default_loader(img_name)
 
         label = int(self.dataframe.iloc[idx, 1])
@@ -38,7 +38,7 @@ class UnlableDataset(torch.utils.data.Dataset):
         return len(self.dataframe)
 
     def __getitem__(self, idx):
-        img_name = os.path.join('./RiceImagesData/', self.dataframe.iloc[idx, 0] + '.jpeg')
+        img_name = os.path.join('./data/RiceImagesData/', self.dataframe.iloc[idx, 0] + '.jpeg')
         image = default_loader(img_name)
         uuid = self.dataframe.iloc[idx, 0]  # 获取uuid
         if self.transform:
