@@ -2,8 +2,10 @@
 A semi-supervised image classification method based on an improved ResNetRS50 architecture, termed CO-ResNetRS50-SSL.
 # Usage Example
 First, clone this project using Git.
-### 1. Download the Dataset
-Go to (link) to download the full version of the dataset, then place all images into the 'RiceImagesData' folder under the 'data' directory.
+### 1. Download the Dataset and Model Weights File
+Go to (https://pan.baidu.com/s/16GKJhmkP00VyWakjHFKjhQ?pwd=9ukl) to download the full version of the dataset, then place all images into the 'RiceImagesData' folder under the 'data' directory.
+Please visit (https://pan.baidu.com/s/1JMFrVNOg-MyIFZZxYqacTQ?pwd=xw5e) to download all the model weight files, then place all the model weight files into the corresponding model name folders under the 'model' directory.
+
 ### 2. Set Up the Environment
 Run 'pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cu118'.
 ### 3. Navigate to the Directory
