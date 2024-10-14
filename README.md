@@ -5,7 +5,7 @@ First, clone this project using Git.
 ### 1. Download the Dataset
 Go to (link) to download the full version of the dataset, then place all images into the 'RiceImagesData' folder under the 'data' directory.
 ### 2. Set Up the Environment
-Run 'pip install -r requirements.txt'.
+Run 'pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cu118'.
 ### 3. Navigate to the Directory
 Change your path to the 'CO-ResNetRS50-SSL' directory.
 ### 4. Training
