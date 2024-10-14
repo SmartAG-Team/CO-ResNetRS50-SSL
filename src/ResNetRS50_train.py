@@ -57,7 +57,7 @@ def main(args):
  
     best_val_accuracy = 0.0
     # 新增：创建CSV文件并写入列标题
-    with open("../data/ResNetRS50/result.csv", "w") as f:
+    with open("./data/ResNetRS50/result.csv", "w") as f:
         f.write("Epoch,Train_Loss,Train_Acc,Val_Loss,Val_Acc,Test_Loss,Test_Acc,Test_Pre,Test_Recall,Test_F1,Test_1_Acc,Test_2_Acc,Test_3_Acc,Test_4_Acc,Test_5_Acc,Test_7_Acc,Test_8_Acc,Test_Confusion_Matrix\n")
     
         for epoch in range(1, args.epochs + 1):
@@ -124,11 +124,11 @@ def main(args):
                     'epoch': epoch,
                 }
                 filename = "Best_model_"
-                torch.save(state, '../model/ResNetRS50/' + filename + 'ckpt.t7')
+                torch.save(state, './model/ResNetRS50/' + filename + 'ckpt.t7')
                 best_val_accuracy = average_val_accuracy
 
         # 测试模型
-        val_checkpoint = torch.load('../model/ResNetRS50/Best_model_ckpt.t7')
+        val_checkpoint = torch.load('./model/ResNetRS50/Best_model_ckpt.t7')
         model.load_state_dict(val_checkpoint['model'])
         val_epoch = val_checkpoint['epoch']
         val_acc = val_checkpoint['acc']
