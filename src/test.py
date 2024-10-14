@@ -28,7 +28,7 @@ def main(args):
     model = ResNet.build_model("resnetrs50").to(device)
     criterion = nn.CrossEntropyLoss().to(device)
     # 测试模型
-    val_checkpoint = torch.load('./model/ResNetRS50_SSL/ssl_90/Best_model_ckpt.t7')
+    val_checkpoint = torch.load('./model/ResNetRS50/Best_model_ckpt.t7')
     model.load_state_dict(val_checkpoint['model'])
     val_epoch = val_checkpoint['epoch']
     val_acc = val_checkpoint['acc']
