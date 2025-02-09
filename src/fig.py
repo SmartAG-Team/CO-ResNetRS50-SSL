@@ -70,7 +70,7 @@ def fig3():
     plt.show()
 
 # 消融实验
-def fig8():
+def fig9():
     # 设置字体
     plt.rcParams.update({'font.family': 'Times New Roman', 'font.size': 10})
 
@@ -161,14 +161,14 @@ def fig8():
     ax1.grid(axis='y', alpha=0.3, zorder=1)
 
     # 保存图像
-    save_path = "./fig/Fig8.png"
+    save_path = "./fig/Fig9.png"
     plt.savefig(save_path, dpi=300, bbox_inches='tight')  # 提高dpi以保持字体清晰
 
     # 显示图形
     plt.show()
 
 # 半监督置信度阈值的图
-def fig9():
+def fig10():
     # 设置字体
     plt.rcParams.update({'font.family': 'Times New Roman', 'font.size': 10})
 
@@ -215,12 +215,12 @@ def fig9():
 
     # Show plot
     plt.tight_layout(pad=0.4)
-    save_path = "./fig/Fig9.png"
+    save_path = "./fig/Fig10.png"
     plt.savefig(save_path, dpi=300, bbox_inches='tight')  # 提高dpi以保持字体清晰
     plt.show()
 
 # 添加图片的数量
-def fig10():
+def fig11():
 
     # 文件路径
     file_paths = {
@@ -271,13 +271,12 @@ def fig10():
 
     # 调整布局
     plt.tight_layout(pad=0.4)
-    save_path = "./fig/Fig10.png"
+    save_path = "./fig/Fig11.png"
     plt.savefig(save_path, dpi=300, bbox_inches='tight')  # 提高dpi以保持字体清晰
     plt.show()
 
-# 具体生育期的条形图
-def fig11():
-
+# 具体生育期的热力图
+def fig12():
     # 设置字体
     plt.rcParams['font.family'] = 'Times New Roman'
     plt.rcParams.update({'font.size': 10})
@@ -302,47 +301,50 @@ def fig11():
     C_ResNetRS50_SSL = df_c_resnet_ssl[['Test_1_Acc', 'Test_2_Acc', 'Test_3_Acc', 'Test_4_Acc', 'Test_5_Acc', 'Test_7_Acc', 'Test_8_Acc']].iloc[79].values * 100
     CO_ResNetRS50_SSL = df_co_resnet_ssl[['Test_1_Acc', 'Test_2_Acc', 'Test_3_Acc', 'Test_4_Acc', 'Test_5_Acc', 'Test_7_Acc', 'Test_8_Acc']].iloc[79].values * 100
 
-    # 设置条形图的宽度
-    bar_width = 0.30
-    spacing = 1.3  # 通过调整这个值增大类别之间的间距
+    # 将数据组合成矩阵
+    data = np.array([
+        ResNetRS50,
+        ResNetRS50_SSL,
+        C_ResNetRS50_SSL,
+        CO_ResNetRS50_SSL
+    ])
 
-    # 创建图表并设置尺寸
-    plt.figure(figsize=(7, 4))  # 适当增大图表的宽度
+    # 模型名称
+    models = ['ResNetRS50', 'ResNetRS50-SSL', 'C-ResNetRS50-SSL', 'CO-ResNetRS50-SSL']
 
-    # 创建条形图
-    bars1 = plt.bar([x * spacing for x in range(len(categories))], ResNetRS50, width=bar_width, color='#EC6E66', label='ResNetRS50', zorder=2)
-    bars2 = plt.bar([x * spacing + bar_width for x in range(len(categories))], ResNetRS50_SSL, width=bar_width, color='#91CCC0', label='ResNetRS50-SSL', zorder=2)
-    bars3 = plt.bar([x * spacing + bar_width*2 for x in range(len(categories))], C_ResNetRS50_SSL, width=bar_width, color='#F7AC53', label='C-ResNetRS50-SSL', zorder=2)
-    bars4 = plt.bar([x * spacing + bar_width*3 for x in range(len(categories))], CO_ResNetRS50_SSL, width=bar_width, color='#B5CE4E', label='CO-ResNetRS50-SSL', zorder=2)
+    # 创建热图
+    fig, ax = plt.subplots(figsize=(7, 5))
+    cax = ax.imshow(data, cmap="YlGn", aspect="auto")
 
-    # 添加标题和标签
-    plt.xlabel('Principal BBCH Code')
-    plt.ylabel('Accuracy(%)')
+    # 添加颜色条
+    cbar = fig.colorbar(cax, ax=ax)
+    cbar.set_label("Accuracy(%)", rotation=270, labelpad=15)
 
-    # 调整X轴标签的位置，使其居中，并增加间距
-    plt.xticks([x * spacing + bar_width*1.5 for x in range(len(categories))], categories)
+    # 设置轴标签和刻度
+    ax.set_xticks(np.arange(len(categories)))
+    ax.set_yticks(np.arange(len(models)))
+    ax.set_xticklabels(categories)
+    ax.set_yticklabels(models, rotation=45)
+    ax.set_xlabel("Principal BBCH Code")
+    ax.set_ylabel("Models")
 
-    # 设置Y轴范围从77%开始
-    plt.ylim(77, 98)
-    # 设置Y轴刻度间隔为2
-    plt.yticks(range(77, 99, 2))
 
-    # 添加图例
-    plt.legend(bbox_to_anchor=(0.5, 1.2), loc='upper center', ncol=2, columnspacing=11.0, frameon=False)
+    # 显示每个单元格的值
+    for i in range(len(models)):
+        for j in range(len(categories)):
+            ax.text(j, i, f"{data[i, j]:.1f}", ha="center", va="center", color="black")
 
-    # 调整图的位置，使其向上移动
-    plt.subplots_adjust(bottom=0.18)
-    plt.grid(True, zorder=1)
+    plt.tight_layout()
 
     # 保存图片
-    save_path = "./fig/Fig11.png"
+    save_path = "./fig/Fig12.png"
     plt.savefig(save_path, dpi=300, bbox_inches='tight')
 
     # 显示图表
     plt.show()
 
 # 混淆矩阵
-def fig12():
+def fig13():
 
     plt.rcParams['font.family'] = 'Times New Roman'
     plt.rcParams.update({'font.size': 10})
@@ -415,10 +417,207 @@ def fig12():
 
     # 调整子图之间的间距
     plt.subplots_adjust(hspace=0.4, wspace=0.35)
-    save_path = "./fig/Fig12.png"
+    save_path = "./fig/Fig13.png"
     plt.savefig(save_path, dpi=300, bbox_inches='tight')
     plt.show()
 
+def fig14():
+    # 设置字体
+    plt.rcParams.update({'font.family': 'Times New Roman', 'font.size': 10})
+
+    # 读取CSV文件
+    files = [
+        './data/CO_ResNetRS50_SSL/result_128.csv',
+        './data/CO_ResNetRS50_SSL/result.csv',
+        './data/CO_ResNetRS50_SSL/result_512.csv',
+    ]
+
+    # 初始化指标列表
+    metrics = {'Accuracy': [], 'Recall': [], 'Precision': [], 'F1 score': []}
+    hours = []  # 初始化训练时间列表
+    latency = []  # 初始化延迟指标列表
+
+    # 读取每个模型的CSV文件并提取指标
+    for file in files:
+        df = pd.read_csv(file)
+        # 假设测试集的指标在最后一行，提取相应的值
+        metrics['Accuracy'].append(df['Test_Acc'].iloc[-1] * 100)  # 转换为百分比
+        metrics['Recall'].append(df['Test_Recall'].iloc[-1] * 100)
+        metrics['Precision'].append(df['Test_Pre'].iloc[-1] * 100)
+        metrics['F1 score'].append(df['Test_F1'].iloc[-1] * 100)
+        hours.append(df['Hours'].iloc[-1])  # 提取训练时间
+        latency.append(df['Latency'].iloc[-1])  # 提取延迟时间（单位：毫秒）
+
+    size = ['128×128', '224×224', '512×512']
+
+    # 创建图形
+    fig, ax1 = plt.subplots(figsize=(7, 5))
+
+    # 绘制左侧 y 轴的折线图
+    for label in metrics:
+        ax1.plot(size, metrics[label], marker='o', label=label)
+        # 为每个点添加注释
+        for j, value in enumerate(metrics[label]):
+            ax1.text(size[j], value + 0.04, f'{value:.2f}', ha='center', va='bottom', fontsize=10)
+
+    # 设置左侧 y 轴
+    ax1.set_ylim(86, 91)  # 根据需要修改范围
+    ax1.set_ylabel('Values of Accuracy, Recall, Precision, and F1 score. (%)')
+    ax1.grid(True)
+
+    # 创建右侧第一个 y 轴（Training time）
+    ax2 = ax1.twinx()
+    ax2.plot(size, hours, marker='s', color='mediumpurple', label='Training time')
+
+    # 为 Training time 添加注释
+    for j, value in enumerate(hours):
+        ax2.text(size[j], value + 0.1, f'{value:.2f}', ha='center', va='bottom', fontsize=10, color='mediumpurple')
+
+    # 设置 Training time 的轴标签和刻度
+    ax2.set_ylabel('Training time (Hour)', color='mediumpurple')
+    ax2.tick_params(axis='y', labelcolor='mediumpurple')  # 设置刻度颜色
+    ax2.spines["right"].set_edgecolor("mediumpurple")  # 设置右侧边框颜色
+    ax2.set_ylim(0, 14)  # 根据需要调整范围
+
+    # 创建右侧第二个 y 轴（Latency）
+    ax3 = ax1.twinx()  # 创建新 y 轴
+    ax3.spines["right"].set_position(("axes", 1.1))  # 将新轴移到更右侧
+    ax3.plot(size, latency, marker='^', color='teal', label='Latency')
+
+    # 为 Latency 添加注释
+    for j, value in enumerate(latency):
+        ax3.text(size[j], value + 0.1, f'{value:.2f}', ha='center', va='bottom', fontsize=10, color='teal')
+
+    # 设置 Latency 的轴标签和刻度
+    ax3.set_ylabel('Latency (ms)', color='teal')
+    ax3.tick_params(axis='y', labelcolor='teal')  # 设置刻度颜色
+    ax3.spines["right"].set_edgecolor("teal")  # 设置右侧边框颜色
+    ax3.set_ylim(18.3, 22)  # 根据需要调整范围
+
+    # 合并图例
+    lines_labels = [ax.get_legend_handles_labels() for ax in [ax1, ax2, ax3]]
+    lines, labels = [], []
+    for line, label in lines_labels:
+        lines.extend(line)
+        labels.extend(label)
+
+    # 在顶部居中添加图例
+    fig.legend(lines, labels, loc='upper left', bbox_to_anchor=(0.1, 0.97), fontsize=10)
+
+    # 调整布局并保存图像
+    plt.tight_layout(pad=0.4)
+    save_path = "./fig/Fig14.png"
+    plt.savefig(save_path, dpi=300, bbox_inches='tight')  # 提高dpi以保持字体清晰
+    plt.show()
+
+def fig15():
+    # 设置字体
+    plt.rcParams.update({'font.family': 'Times New Roman', 'font.size': 10})
+
+
+    # 模型名称
+    models = ['ConvNext-base', 'FasterNet-t1', 'ShuffleNetV2', 'SwinTransformer', 'Vision Transformer', 'CO-ResNetRS50-SSL']
+
+    csv_files = [
+        './data/ConvNext/result.csv',
+        './data/FasterNet_t1/result.csv',
+        './data/ShuffleNetV2/result.csv',
+        './data/SwinTransformer/result.csv',
+        './data/vit/result.csv',
+        './data/CO_ResNetRS50_SSL/result.csv'
+    ]
+
+    # 初始化性能数据和参数列表
+    performance = []
+    parameters = []
+
+    # 循环读取每个模型的CSV文件并提取需要的值
+    for csv_file in csv_files:
+        # 读取CSV文件
+        df = pd.read_csv(csv_file)
+        
+        # 提取Test_Acc, Test_Pre, Test_Recall, Test_F1的最后一个epoch数据
+        accuracy = df['Test_Acc'].dropna().values[-1] * 100  # 转为百分比
+        precision = df['Test_Pre'].dropna().values[-1] * 100
+        recall = df['Test_Recall'].dropna().values[-1] * 100
+        f1_score = df['Test_F1'].dropna().values[-1] * 100
+        
+        # 提取模型参数
+        model_param = df['Model_Parameter'].dropna().values[-1]  # 假设需要将单位从百万(M)调整
+        
+        # 将数据添加到performance和parameters列表中
+        performance.append([accuracy, recall, precision, f1_score])
+        parameters.append(model_param)
+
+    # 将performance转换为numpy数组，方便后续处理
+    performance = np.array(performance).T  # 转置，使其与之前的代码结构保持一致
+
+    # 颜色设置
+    colors = ['#EC6E66', '#F7AC53', '#B5CE4E', '#6A5ACD', '#FFA07A', '#4682B4']
+
+    # 设置柱形图的位置和宽度
+    metrics = ['Accuracy', 'Recall', 'Precision', 'F1 score', 'Parameter']
+
+    # 设置x轴刻度线的位置，偏移量使其位于所有模型竖条的中间
+    x = np.arange(len(metrics))  # 指标的标签位置
+    width = 0.15  # 每个柱子的宽度
+    offset = (len(models) - 1) * width / 2  # 计算偏移量，确保x轴标签居中
+
+    # 创建图形
+    fig, ax1 = plt.subplots(figsize=(7, 5))
+
+    # 绘制性能指标条形图，分别为每个模型绘制
+    for i in range(len(models)):
+        ax1.bar(x[:-1] + i * width - offset, performance[:, i], width, label=models[i], color=colors[i], zorder=2)
+
+    # 添加数值标签，并为SwinTransformer设置额外的偏移量
+    for i in range(len(metrics) - 1):
+        for j in range(len(models)):
+            text_offset = 0.1  # 默认的偏移量
+            if models[j] == 'SwinTransformer':  # 如果是SwinTransformer，增加偏移量
+                text_offset = 0.4  # 可以根据需要调整这个值
+            ax1.text(x[i] + j * width - offset, performance[i, j] + text_offset, f'{performance[i, j]:.2f}', 
+                    ha='center', va='bottom', fontsize=10)
+
+    # 设置左侧y轴标签和范围
+    ax1.set_ylabel('Values of Accuracy, Recall, Precision, and F1 score. (%)')
+    # ax1.set_ylabel('准确率、召回率、精确率和F1分数的值 (%)')
+    ax1.set_ylim(80, 92)
+
+    # 设置x轴标签
+    ax1.set_xticks(x)
+    ax1.set_xticklabels(metrics)
+
+    # 设置右侧y轴，用于显示参数量
+    ax2 = ax1.twinx()
+    # ax2.set_ylabel('参数量的值 (M)')  # 修改右侧y轴的颜色
+    ax2.set_ylabel('Values of Parameter. (M)')  # 修改右侧y轴的颜色
+    ax2.tick_params(axis='y', rotation=45)    # 让右侧y轴的标签也为蓝色
+    ax2.set_ylim(0, 200)
+
+    # 绘制参数量的条形图
+    for i in range(len(models)):
+        ax2.bar(x[-1] + i * width - offset, parameters[i], width, label=models[i], color=colors[i])
+
+    # 添加参数量数值标签，并设置对应的颜色
+    for i in range(len(models)):
+        ax2.text(x[-1] + i * width - offset, parameters[i] + 0.5, f'{parameters[i]:.2f}', 
+                ha='center', va='bottom', fontsize=10, rotation=45)
+
+    # 显示图例
+    # ax1.legend(loc='upper left')
+    # 将图例放在图形的正上方
+    ax1.legend(loc='upper center', bbox_to_anchor=(0.5, 1.15), ncol=3)
+
+    # 显示网格线
+    ax1.grid(axis='y', alpha=0.3, zorder=1)
+
+    # 保存图像
+    save_path = "./fig/Fig15.png"
+    plt.savefig(save_path, dpi=300, bbox_inches='tight')  # 提高dpi以保持字体清晰
+
+    # 显示图形
+    plt.show()
 
 # 主函数
 def main():
