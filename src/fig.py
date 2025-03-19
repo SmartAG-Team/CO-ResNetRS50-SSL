@@ -133,7 +133,7 @@ def fig9():
                     ha='center', va='bottom', fontsize=10)
 
     # 设置左侧y轴标签和范围
-    ax1.set_ylabel('Values of Accuracy, Recall, Precision, and F1 score. (%)')
+    ax1.set_ylabel('Values of Accuracy, Recall, Precision, and F1 score (%)')
     ax1.set_ylim(87, 92)
 
     # 设置x轴标签
@@ -142,7 +142,7 @@ def fig9():
 
     # 设置右侧y轴，用于显示参数量
     ax2 = ax1.twinx()
-    ax2.set_ylabel('Size of Parameters. (M)')  # 修改右侧y轴的颜色
+    ax2.set_ylabel('Size of Parameters (M)')  # 修改右侧y轴的颜色
     ax2.tick_params(axis='y', rotation=45)    # 让右侧y轴的标签也为蓝色
     ax2.set_ylim(10, 90)
 
@@ -238,7 +238,7 @@ def fig10():
                     ha='center', va='bottom', fontsize=10)
 
     # 设置左侧y轴标签和范围
-    ax1.set_ylabel('Values of Accuracy, Recall, Precision, and F1 score. (%)')
+    ax1.set_ylabel('Values of Accuracy, Recall, Precision, and F1 score (%)')
     # ax1.set_ylabel('准确率、召回率、精确率和F1分数的值 (%)')
     ax1.set_ylim(80, 92)
 
@@ -249,7 +249,7 @@ def fig10():
     # 设置右侧y轴，用于显示参数量
     ax2 = ax1.twinx()
     # ax2.set_ylabel('参数量的值 (M)')  # 修改右侧y轴的颜色
-    ax2.set_ylabel('Size of Parameter. (M)')  # 修改右侧y轴的颜色
+    ax2.set_ylabel('Size of Parameter (M)')  # 修改右侧y轴的颜色
     ax2.tick_params(axis='y', rotation=45)    # 让右侧y轴的标签也为蓝色
     ax2.set_ylim(0, 200)
 
@@ -715,7 +715,7 @@ def fig16():
 
     # 设置左侧 y 轴
     ax1.set_ylim(86, 91)  # 根据需要修改范围
-    ax1.set_ylabel('Values of Accuracy, Recall, Precision, and F1 score. (%)')
+    ax1.set_ylabel('Values of Accuracy, Recall, Precision, and F1 score (%)')
     ax1.grid(True)
 
     # 创建右侧第一个 y 轴（Training time）
@@ -767,7 +767,7 @@ def fig16():
 # 主函数
 def main():
     # 调用不同的方法
-    fig10()
+    fig16()
 
 # 运行主函数
 if __name__ == "__main__":
