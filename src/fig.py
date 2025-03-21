@@ -6,6 +6,8 @@ import pandas as pd
 from matplotlib import font_manager
 import ast
 from scipy.stats import ttest_rel
+from scipy.stats import ttest_ind
+from scipy import stats
 # 生育期和对应的图片数量
 def fig3():
 
@@ -72,219 +74,212 @@ def fig3():
 
 # 消融实验
 def fig9():
+
     # 设置字体
     plt.rcParams.update({'font.family': 'Times New Roman', 'font.size': 10})
 
     # 模型名称
     models = ['ResNetRS50', 'ResNetRS50-SSL', 'C-ResNetRS50-SSL', 'CO-ResNetRS50-SSL']
 
-    # 对应每个模型的CSV文件路径
-    csv_files = [
-        './data/ResNetRS50/result.csv',
-        './data/ResNetRS50_SSL/ssl_90/result.csv',
-        './data/C_ResNetRS50_SSL/result.csv',
-        './data/CO_ResNetRS50_SSL/result.csv'
-    ]
+    # 每个模型的五次实验路径
+    model_paths = {
+        'ResNetRS50': [
+            './data/ResNetRS50/result.csv',
+            './data/ResNetRS50/result2.csv',
+            './data/ResNetRS50/result3.csv',
+            './data/ResNetRS50/result4.csv',
+            './data/ResNetRS50/result5.csv'
+        ],
+        'ResNetRS50-SSL': [
+            './data/ResNetRS50_SSL/ssl_90/result.csv',
+            './data/ResNetRS50_SSL/ssl_90/result2.csv',
+            './data/ResNetRS50_SSL/ssl_90/result3.csv',
+            './data/ResNetRS50_SSL/ssl_90/result4.csv',
+            './data/ResNetRS50_SSL/ssl_90/result5.csv'
+        ],
+        'C-ResNetRS50-SSL': [
+            './data/C_ResNetRS50_SSL/result.csv',
+            './data/C_ResNetRS50_SSL/result2.csv',
+            './data/C_ResNetRS50_SSL/result3.csv',
+            './data/C_ResNetRS50_SSL/result4.csv',
+            './data/C_ResNetRS50_SSL/result5.csv'
+        ],
+        'CO-ResNetRS50-SSL': [
+            './data/CO_ResNetRS50_SSL/result.csv',
+            './data/CO_ResNetRS50_SSL/result2.csv',
+            './data/CO_ResNetRS50_SSL/result3.csv',
+            './data/CO_ResNetRS50_SSL/result4.csv',
+            './data/CO_ResNetRS50_SSL/result5.csv'
+        ]
+    }
 
     # 初始化性能数据和参数列表
     performance = []
     parameters = []
+    p_values = {'accuracy': [], 'precision': [], 'recall': [], 'f1_score': []}
 
-    # 循环读取每个模型的CSV文件并提取需要的值
-    for csv_file in csv_files:
-        # 读取CSV文件
-        df = pd.read_csv(csv_file)
-        
-        # 提取Test_Acc, Test_Pre, Test_Recall, Test_F1的最后一个epoch数据
-        accuracy = df['Test_Acc'].dropna().values[-1] * 100  # 转为百分比
-        precision = df['Test_Pre'].dropna().values[-1] * 100
-        recall = df['Test_Recall'].dropna().values[-1] * 100
-        f1_score = df['Test_F1'].dropna().values[-1] * 100
-        
-        # 提取模型参数
-        model_param = df['Model_Parameter'].dropna().values[-1]  # 假设需要将单位从百万(M)调整
-        
-        # 将数据添加到performance和parameters列表中
-        performance.append([accuracy, recall, precision, f1_score])
-        parameters.append(model_param)
+    # 读取CO-ResNetRS50-SSL的数据（对比的基准模型）
+    co_resnet_results = pd.read_csv(model_paths['CO-ResNetRS50-SSL'][0])
+    co_resnet_performance = {
+        'accuracy': co_resnet_results['Test_Acc'].dropna().values[-1] * 100,
+        'precision': co_resnet_results['Test_Pre'].dropna().values[-1] * 100,
+        'recall': co_resnet_results['Test_Recall'].dropna().values[-1] * 100,
+        'f1_score': co_resnet_results['Test_F1'].dropna().values[-1] * 100,
+    }
+    co_resnet_params = co_resnet_results['Model_Parameter'].dropna().values[-1]
 
-    # 将performance转换为numpy数组，方便后续处理
-    performance = np.array(performance).T  # 转置，使其与之前的代码结构保持一致
+    # 修改模型参数的提取方式
+    for model in models:
+        model_performance = []
+        model_params = []
+        for file in model_paths[model]:
+            df = pd.read_csv(file)
+            accuracy = df['Test_Acc'].dropna().values[-1] * 100
+            precision = df['Test_Pre'].dropna().values[-1] * 100
+            recall = df['Test_Recall'].dropna().values[-1] * 100
+            f1_score = df['Test_F1'].dropna().values[-1] * 100
+            model_performance.append([accuracy, precision, recall, f1_score])
+            
+            # 提取模型参数
+            model_param = df['Model_Parameter'].dropna().values[-1]  # 取参数量
+            model_params.append(model_param)
+
+        model_performance = np.array(model_performance)
+
+        # 计算每个性能指标的平均值
+        mean_performance = np.mean(model_performance, axis=0)
+
+        # 计算每个性能指标的t检验（基于五次实验）
+        for metric, idx in zip(['accuracy', 'precision', 'recall', 'f1_score'], range(4)):
+            t_stat, p_value = stats.ttest_ind(model_performance[:, idx], [co_resnet_performance[metric]] * 5)
+            p_values[metric].append(p_value)
+
+        # 计算参数量的平均值
+        mean_param = np.mean(model_params)
+
+        # 将平均参数量添加到参数列表
+        parameters.append(mean_param)
+
+        # 将平均性能添加到性能列表
+        performance.append(mean_performance)
+
+    # 转换性能为numpy数组
+    performance = np.array(performance).T
 
     # 颜色设置
     colors = ['#EC6E66', '#91CCC0', '#F7AC53', '#B5CE4E']
 
     # 设置柱形图的位置和宽度
-    metrics = ['Accuracy', 'Recall', 'Precision', 'F1 score', 'Parameter']
-    x = np.arange(len(metrics))  # 指标的标签位置
-    width = 0.2  # 每个柱子的宽度
+    metrics = ['Accuracy', 'Precision', 'Recall', 'F1 score', 'Parameter']
+    x = np.arange(len(metrics))
+    width = 0.2
+    offset = (len(models) - 1) * width / 2
 
     # 创建图形
     fig, ax1 = plt.subplots(figsize=(7, 5))
 
-    # 绘制性能指标条形图，分别为每个模型绘制
+    # 绘制性能指标条形图
     for i in range(len(models)):
-        ax1.bar(x[:-1] + i * width - width * 1.5, performance[:, i], width, label=models[i], color=colors[i], zorder=2)
+        ax1.bar(x[:-1] + i * width - offset, performance[:, i], width, label=models[i], color=colors[i], zorder=2)
 
     # 添加数值标签
     for i in range(len(metrics) - 1):
         for j in range(len(models)):
-            ax1.text(x[i] + j * width - width * 1.5, performance[i, j] + 0.1, f'{performance[i, j]:.2f}', 
+            text_offset = 0.1
+            if models[j] == 'SwinTransformer':
+                text_offset = 0.4
+            ax1.text(x[i] + j * width - offset, performance[i, j] + text_offset, f'{performance[i, j]:.2f}',
                     ha='center', va='bottom', fontsize=10)
 
-    # 设置左侧y轴标签和范围
-    ax1.set_ylabel('Values of Accuracy, Recall, Precision, and F1 score. (%)')
+    # 设置y轴标签
+    ax1.set_ylabel('Values of Accuracy, Recall, Precision, and F1 score (%)')
     ax1.set_ylim(87, 92)
 
     # 设置x轴标签
     ax1.set_xticks(x)
     ax1.set_xticklabels(metrics)
 
-    # 设置右侧y轴，用于显示参数量
+    # 设置右侧y轴
     ax2 = ax1.twinx()
-    ax2.set_ylabel('Size of Parameters. (M)')  # 修改右侧y轴的颜色
-    ax2.tick_params(axis='y', rotation=45)    # 让右侧y轴的标签也为蓝色
+    ax2.set_ylabel('Size of Parameter (M)')
+    ax2.tick_params(axis='y', rotation=45)
     ax2.set_ylim(10, 90)
 
     # 绘制参数量的条形图
     for i in range(len(models)):
-        ax2.bar(x[-1] + i * width - width * 1.5, parameters[i], width, label=models[i], color=colors[i])
+        ax2.bar(x[-1] + i * width - offset, parameters[i], width, label=models[i], color=colors[i])
 
-    # 添加参数量数值标签，并设置对应的颜色
+    # 添加参数量数值标签
     for i in range(len(models)):
-        ax2.text(x[-1] + i * width - width * 1.5, parameters[i] + 0.5, f'{parameters[i]:.2f}', 
+        ax2.text(x[-1] + i * width - offset, parameters[i] + 0.5, f'{parameters[i]:.2f}',
                 ha='center', va='bottom', fontsize=10, rotation=45)
 
+    # 在图上标记显著性差异
+    for i in range(len(models)):
+        if models[i] != 'CO-ResNetRS50-SSL':
+            for metric, idx in zip(['accuracy', 'precision', 'recall', 'f1_score'], range(4)):
+                p_value = p_values[metric][i]
+                if p_value < 0.001:  # p-value < 0.001 indicates significant difference
+                    star = '***'
+                elif p_value < 0.01:  # p-value < 0.01 indicates significant difference
+                    star = '**'
+                elif p_value < 0.05:  # p-value < 0.05 indicates significant difference
+                    star = '*'
+                else:
+                    star = 'ns'
+
+                # 增加递增的高度偏移量
+                line_offset = 0.3 * i  # 每个模型递增的高度
+
+                # 连接线的绘制
+                if p_value < 0.05:
+                    current_y = performance[idx, i] + 0.5 + line_offset  # 当前模型的y值，增加高度偏移
+                    co_resnet_y = performance[idx, -1] + 0.5 + line_offset  # CO-ResNetRS50-SSL的y值，增加高度偏移
+
+                    # 水平连接线
+                    ax1.plot([x[idx] + i * width - offset, x[idx] + (len(models) - 1) * width - offset],
+                            [max(current_y, co_resnet_y), max(current_y, co_resnet_y)], color='black', lw=1)
+
+                    # 当前模型的竖直连接线
+                    ax1.plot([x[idx] + i * width - offset, x[idx] + i * width - offset],
+                            [performance[idx, i] + 0.3, max(current_y, co_resnet_y)], color='black', lw=1)
+
+                    # 基准模型的竖直连接线
+                    ax1.plot([x[idx] + (len(models) - 1) * width - offset, x[idx] + (len(models) - 1) * width - offset],
+                            [performance[idx, -1] + 0.3, max(current_y, co_resnet_y)], color='black', lw=1)
+
+                    # 在连接线的中间位置添加显著性标记
+                    mid_x = (x[idx] + i * width - offset)
+                    mid_y = max(current_y, co_resnet_y) + 0  # 上移一点，避免重叠
+                    ax1.text(mid_x, mid_y, star, ha='center', va='bottom', fontsize=10, color='black')
+
+    # 在右上角添加备注
+    ax1.text(0.97, 0.99, '* denotes p ≤ 0.05', transform=ax1.transAxes, ha='right', va='top', fontsize=10, color='red')
+    ax1.text(0.97, 0.94, '*** denotes p ≤ 0.001', transform=ax1.transAxes, ha='right', va='top', fontsize=10, color='red')
     # 显示图例
-    ax1.legend(loc='upper left')
+    # ax1.legend(loc='upper left')
+    # 显示图例在正上方，设置两排两列
+    ax1.legend(loc='upper center', bbox_to_anchor=(0.5, 1.16), ncol=2, columnspacing=12)
 
     # 显示网格线
     ax1.grid(axis='y', alpha=0.3, zorder=1)
 
     # 保存图像
     save_path = "./fig/Fig9.png"
-    plt.savefig(save_path, dpi=300, bbox_inches='tight')  # 提高dpi以保持字体清晰
+    plt.savefig(save_path, dpi=300, bbox_inches='tight')
 
     # 显示图形
     plt.show()
 
 def fig10():
-    # 设置字体
-    plt.rcParams.update({'font.family': 'Times New Roman', 'font.size': 10})
 
+    plt.rcParams.update({'font.family': 'Times New Roman', 'font.size': 10})
 
     # 模型名称
     models = ['ConvNext-base', 'FasterNet-t1', 'ShuffleNetV2', 'SwinTransformer', 'Vision Transformer', 'CO-ResNetRS50-SSL']
 
-    csv_files = [
-        './data/ConvNext/result.csv',
-        './data/FasterNet_t1/result.csv',
-        './data/ShuffleNetV2/result.csv',
-        './data/SwinTransformer/result.csv',
-        './data/vit/result.csv',
-        './data/CO_ResNetRS50_SSL/result.csv'
-    ]
-
-    # 初始化性能数据和参数列表
-    performance = []
-    parameters = []
-
-    # 循环读取每个模型的CSV文件并提取需要的值
-    for csv_file in csv_files:
-        # 读取CSV文件
-        df = pd.read_csv(csv_file)
-        
-        # 提取Test_Acc, Test_Pre, Test_Recall, Test_F1的最后一个epoch数据
-        accuracy = df['Test_Acc'].dropna().values[-1] * 100  # 转为百分比
-        precision = df['Test_Pre'].dropna().values[-1] * 100
-        recall = df['Test_Recall'].dropna().values[-1] * 100
-        f1_score = df['Test_F1'].dropna().values[-1] * 100
-        
-        # 提取模型参数
-        model_param = df['Model_Parameter'].dropna().values[-1]  # 假设需要将单位从百万(M)调整
-        
-        # 将数据添加到performance和parameters列表中
-        performance.append([accuracy, recall, precision, f1_score])
-        parameters.append(model_param)
-
-    # 将performance转换为numpy数组，方便后续处理
-    performance = np.array(performance).T  # 转置，使其与之前的代码结构保持一致
-
-    # 颜色设置
-    colors = ['#EC6E66', '#F7AC53', '#B5CE4E', '#6A5ACD', '#FFA07A', '#4682B4']
-
-    # 设置柱形图的位置和宽度
-    metrics = ['Accuracy', 'Recall', 'Precision', 'F1 score', 'Parameter']
-
-    # 设置x轴刻度线的位置，偏移量使其位于所有模型竖条的中间
-    x = np.arange(len(metrics))  # 指标的标签位置
-    width = 0.15  # 每个柱子的宽度
-    offset = (len(models) - 1) * width / 2  # 计算偏移量，确保x轴标签居中
-
-    # 创建图形
-    fig, ax1 = plt.subplots(figsize=(7, 5))
-
-    # 绘制性能指标条形图，分别为每个模型绘制
-    for i in range(len(models)):
-        ax1.bar(x[:-1] + i * width - offset, performance[:, i], width, label=models[i], color=colors[i], zorder=2)
-
-    # 添加数值标签，并为SwinTransformer设置额外的偏移量
-    for i in range(len(metrics) - 1):
-        for j in range(len(models)):
-            text_offset = 0.1  # 默认的偏移量
-            if models[j] == 'SwinTransformer':  # 如果是SwinTransformer，增加偏移量
-                text_offset = 0.4  # 可以根据需要调整这个值
-            ax1.text(x[i] + j * width - offset, performance[i, j] + text_offset, f'{performance[i, j]:.2f}', 
-                    ha='center', va='bottom', fontsize=10)
-
-    # 设置左侧y轴标签和范围
-    ax1.set_ylabel('Values of Accuracy, Recall, Precision, and F1 score. (%)')
-    # ax1.set_ylabel('准确率、召回率、精确率和F1分数的值 (%)')
-    ax1.set_ylim(80, 92)
-
-    # 设置x轴标签
-    ax1.set_xticks(x)
-    ax1.set_xticklabels(metrics)
-
-    # 设置右侧y轴，用于显示参数量
-    ax2 = ax1.twinx()
-    # ax2.set_ylabel('参数量的值 (M)')  # 修改右侧y轴的颜色
-    ax2.set_ylabel('Size of Parameter. (M)')  # 修改右侧y轴的颜色
-    ax2.tick_params(axis='y', rotation=45)    # 让右侧y轴的标签也为蓝色
-    ax2.set_ylim(0, 200)
-
-    # 绘制参数量的条形图
-    for i in range(len(models)):
-        ax2.bar(x[-1] + i * width - offset, parameters[i], width, label=models[i], color=colors[i])
-
-    # 添加参数量数值标签，并设置对应的颜色
-    for i in range(len(models)):
-        ax2.text(x[-1] + i * width - offset, parameters[i] + 0.5, f'{parameters[i]:.2f}', 
-                ha='center', va='bottom', fontsize=10, rotation=45)
-
-    # 显示图例
-    # ax1.legend(loc='upper left')
-    # 将图例放在图形的正上方
-    ax1.legend(loc='upper center', bbox_to_anchor=(0.5, 1.15), ncol=3)
-
-    # 显示网格线
-    ax1.grid(axis='y', alpha=0.3, zorder=1)
-
-    # 保存图像
-    save_path = "./fig/Fig10.png"
-    plt.savefig(save_path, dpi=300, bbox_inches='tight')  # 提高dpi以保持字体清晰
-
-    # 显示图形
-    plt.show()
-
-def fig11():
-    # 更新字体设置
-    plt.rcParams.update({'font.family': 'Times New Roman', 'font.size': 10})
-
-    # 模型名称
-    models = ['ConvNext-base', 'ShuffleNetV2', 'FasterNet-t1', 'Vision Transformer', 'Swin Transformer', 'ResNetRS50', 'CO-ResNetRS50-SSL']
-
-    csv_files = {
+    # 模型对应的csv文件路径
+    model_paths = {
         'ConvNext-base': [
             './data/ConvNext/result.csv',
             './data/ConvNext/result2.csv',
@@ -298,7 +293,6 @@ def fig11():
             './data/ShuffleNetV2/result3.csv',
             './data/ShuffleNetV2/result4.csv',
             './data/ShuffleNetV2/result5.csv'
-            
         ],
         'FasterNet-t1': [
             './data/FasterNet_t1/result.csv',
@@ -314,19 +308,12 @@ def fig11():
             './data/vit/result4.csv',
             './data/vit/result5.csv'
         ],
-        'Swin Transformer': [
+        'SwinTransformer': [
             './data/SwinTransformer/result.csv',
             './data/SwinTransformer/result2.csv',
             './data/SwinTransformer/result3.csv',
             './data/SwinTransformer/result4.csv',
             './data/SwinTransformer/result5.csv'
-        ],
-        'ResNetRS50': [
-            './data/ResNetRS50/result.csv',
-            './data/ResNetRS50/result2.csv',
-            './data/ResNetRS50/result3.csv',
-            './data/ResNetRS50/result4.csv',
-            './data/ResNetRS50/result5.csv'
         ],
         'CO-ResNetRS50-SSL': [
             './data/CO_ResNetRS50_SSL/result.csv',
@@ -338,90 +325,121 @@ def fig11():
     }
 
     # 初始化性能数据
-    performance = {model: [] for model in models}
+    performance = {metric: [] for metric in ['Accuracy', 'Precision', 'Recall', 'F1 score']}
+    parameters = []
 
-    # 循环读取每个模型的三次试验的CSV文件并提取需要的值
-    for model, paths in csv_files.items():
-        for csv_file in paths:
-            # 读取CSV文件
-            df = pd.read_csv(csv_file)
-            
-            # 提取Test_Acc的最后一个epoch数据
-            accuracy = df['Test_Acc'].dropna().values[-1] * 100  # 转为百分比
-            
-            # 将每次试验数据添加到对应模型的performance列表
-            performance[model].append(accuracy)
-
-    # 转换为DataFrame，方便绘图
-    performance_data = []
-
-    for model in performance:
-        for accuracy in performance[model]:
-            performance_data.append({
-                'Model': model,
-                'Metric': 'Accuracy',
-                'Value': accuracy
-            })
-
-    # 将列表转换为DataFrame
-    df_performance = pd.DataFrame(performance_data)
-
-    # 计算每个模型与CO-ResNetRS50-SSL的t检验并存储p值
-    p_values = {}
-    co_resnet_values = np.array(performance['CO-ResNetRS50-SSL'])
-
-    # 提取各个模型的准确率数据
+    # 循环读取每个模型的CSV文件
     for model in models:
-        if model != 'CO-ResNetRS50-SSL':  # 只与CO-ResNetRS50-SSL比较
-            model_values = np.array(performance[model])
-            t_stat, p_val = ttest_rel(model_values, co_resnet_values)
-            p_values[model] = p_val
+        csv_files = model_paths[model]
+        temp_results = {metric: [] for metric in performance.keys()}
 
-    # 使用Seaborn绘制箱线图
-    plt.figure(figsize=(7, 5))
-    sns.boxplot(x='Model', y='Value', data=df_performance[df_performance['Metric'] == 'Accuracy'], palette='Set3')
+        for csv_file in csv_files:
+            df = pd.read_csv(csv_file)
 
-    # 函数：将p值转换为星号标注
-    def p_value_to_stars(p_val):
-        if p_val < 0.001:
-            return '***'
-        elif p_val < 0.01:
-            return '**'
-        elif p_val < 0.05:
-            return '*'
+            # 提取 Test_Acc, Test_Pre, Test_Recall, Test_F1 的所有试验数据
+            temp_results['Accuracy'].append(df['Test_Acc'].dropna().values[0] * 100)
+            temp_results['Precision'].append(df['Test_Pre'].dropna().values[0] * 100)
+            temp_results['Recall'].append(df['Test_Recall'].dropna().values[0] * 100)
+            temp_results['F1 score'].append(df['Test_F1'].dropna().values[0] * 100)
+
+        # 将每个模型的五次试验的平均值添加到 performance 中
+        for metric in performance.keys():
+            performance[metric].append(np.mean(temp_results[metric]))  # 使用五次试验的平均值
+
+        # 提取模型参数（只需从第一个文件中提取一次）
+        param = df['Model_Parameter'].dropna().values[0]
+        parameters.append(param)
+
+    # CO-ResNetRS50-SSL 模型的性能数据（用于 t 检验对比，五次试验的数据）
+    co_resnet_performance = {metric: temp_results[metric] for metric in performance.keys()}
+
+    # t 检验
+    ttest_results = {metric: [] for metric in performance.keys()}
+    for metric in performance.keys():
+        co_resnet_samples = co_resnet_performance[metric]  # CO-ResNetRS50-SSL 模型的所有样本数据
+        for i in range(len(models) - 1):  # 忽略 CO-ResNetRS50-SSL 模型
+            other_model_samples = performance[metric][i]  # 其他模型的五次试验数据
+            t_stat, p_value = ttest_ind(other_model_samples, co_resnet_samples)  # 使用样本组进行 t 检验
+            ttest_results[metric].append(p_value)
+
+    # 创建子图布局
+    metrics = ['Accuracy', 'Recall', 'Precision', 'F1 score', 'Parameter']
+    fig, axes = plt.subplots(3, 2, figsize=(7, 8))
+    axes = axes.flatten()
+    colors = ['#EC6E66', '#F7AC53', '#B5CE4E', '#6A5ACD', '#FFA07A', '#4682B4']
+
+    for i, metric in enumerate(metrics):
+        ax = axes[i]
+
+        if metric != 'Parameter':
+            data = performance[metric]
+            ylabel = f'Values of {metric} (%)'
+            ylim = (80, 98)
         else:
-            return 'ns'  # 不显著
+            data = parameters
+            ylabel = f'Values of {metric} (M)'
+            ylim = (0, 100)
 
-    # 在图上标注显著性星号
-    for i, model in enumerate(models[:-1]):  # 排除CO-ResNetRS50-SSL
-        p_val = p_values.get(model, 1.0)  # 默认p值为1.0
-        stars = p_value_to_stars(p_val)  # 将p值转换为星号
-        
-        # 处理Vision Transformer和Swin Transformer的星号位置
-        if model in ['Vision Transformer', 'Swin Transformer']:
-            plt.text(i, max(df_performance[df_performance['Model'] == model]['Value']) + 0.1,  # 提高星号的位置
-                    stars, horizontalalignment='center', color='black', weight='semibold')
-        else:
-            plt.text(i, max(df_performance[df_performance['Model'] == model]['Value']) + 0.1,
-                    stars, horizontalalignment='center', color='black', weight='semibold')
+        # 绘制柱形图
+        x = np.arange(len(models))
+        width = 0.5
+        bars = ax.bar(x, data, width, color=colors[:len(models)])
+
+        # 添加显著性标注（*号）
+        if metric != 'Parameter':
+            # 初始化竖线和水平线的高度偏移量
+            base_y = max(data) + 1.0  # 基础高度
+            height_step = 1.2  # 每个模型之间的高度差
             
+            # 添加连接线（折线），不同模型的竖线高度逐渐增高
+            for j in range(len(models) - 1):  # 忽略 CO-ResNetRS50-SSL
+                if ttest_results[metric][j] < 0.05:  # 如果显著性小于 0.05
+                    current_y = base_y + j * height_step  # 根据模型编号增加高度偏移
+                    ax.plot([j, j], [data[j] + 0.5, current_y], color='black', lw=1)  # 第一个模型的竖线
+                    ax.plot([len(models) - 1, len(models) - 1], [data[-1] + 0.5, current_y], color='black', lw=1)  # CO-ResNetRS50-SSL 模型的竖线
+                    ax.plot([j, len(models) - 1], [current_y, current_y], color='black', lw=1)  # 水平线
+                    
+                    # 添加显著性标记到水平线上方
+                    if ttest_results[metric][j] < 0.001:
+                        # ax.text(j + (len(models) - 1 - j) / 2, current_y - 0.2, '***', ha='center', va='bottom', fontsize=12, color='black')
+                        ax.text(j, current_y - 0.2, '***', ha='center', va='bottom', fontsize=12, color='black')
+                    elif ttest_results[metric][j] < 0.01:
+                        ax.text(j, current_y - 0.2, '**', ha='center', va='bottom', fontsize=12, color='black')
+                    elif ttest_results[metric][j] < 0.05:
+                        ax.text(j, current_y - 0.2, '*', ha='center', va='bottom', fontsize=12, color='black')
+                    else:
+                        ax.text(j, current_y - 0.2, 'ns', ha='center', va='bottom', fontsize=12, color='black')
 
-    # 设置x轴标签旋转角度为10度
-    plt.xticks(rotation=15)
 
-    plt.xlabel('')  # 这将清除x轴的默认标签"Model"
-    # 设置图表标题和标签
-    plt.ylabel('Accuracy (%)')
+        # 设置子图标题和标签
+        ax.set_ylabel(ylabel)
+        if metric in ['Accuracy', 'Recall', 'Precision']:
+            ax.set_xticks([])  # 不显示 x 轴刻度标签
+        else:
+            ax.set_xticks(x)
+            ax.set_xticklabels(models, rotation=45, fontsize=9)
+        ax.set_ylim(ylim)
 
-    plt.tight_layout()
+    # 删除多余的子图框架
+    for i in range(len(metrics), len(axes)):
+        fig.delaxes(axes[i])
 
-    # 保存图像
-    save_path = "./fig/fig11.png"
-    plt.savefig(save_path, dpi=300, bbox_inches='tight')  # 提高dpi以保持字体清晰
+    # 在右下角添加备注
+    fig.text(0.83, 0.23, '** denotes p ≤ 0.01', ha='right', va='bottom', fontsize=10, color='red')
+    fig.text(0.83, 0.20, '*** denotes p ≤ 0.001', ha='right', va='bottom', fontsize=10, color='red')
+
+    # 调整布局并保存图像
+    fig.tight_layout()
+    fig.subplots_adjust(hspace=0.1, wspace=0.2)
+    save_path = "./fig/Fig10.png"
+    plt.savefig(save_path, dpi=300, bbox_inches='tight')
+
+    # 显示图形
     plt.show()
 
+
 # 半监督置信度阈值的图
-def fig12():
+def fig11():
     # 设置字体
     plt.rcParams.update({'font.family': 'Times New Roman', 'font.size': 10})
 
@@ -468,12 +486,12 @@ def fig12():
 
     # Show plot
     plt.tight_layout(pad=0.4)
-    save_path = "./fig/Fig12.png"
+    save_path = "./fig/Fig11.png"
     plt.savefig(save_path, dpi=300, bbox_inches='tight')  # 提高dpi以保持字体清晰
     plt.show()
 
 # 添加图片的数量
-def fig13():
+def fig12():
 
     # 文件路径
     file_paths = {
@@ -524,12 +542,12 @@ def fig13():
 
     # 调整布局
     plt.tight_layout(pad=0.4)
-    save_path = "./fig/Fig13.png"
+    save_path = "./fig/Fig12.png"
     plt.savefig(save_path, dpi=300, bbox_inches='tight')  # 提高dpi以保持字体清晰
     plt.show()
 
 # 具体生育期的热力图
-def fig14():
+def fig13():
     # 设置字体
     plt.rcParams['font.family'] = 'Times New Roman'
     plt.rcParams.update({'font.size': 10})
@@ -590,14 +608,14 @@ def fig14():
     plt.tight_layout()
 
     # 保存图片
-    save_path = "./fig/Fig14.png"
+    save_path = "./fig/Fig13.png"
     plt.savefig(save_path, dpi=300, bbox_inches='tight')
 
     # 显示图表
     plt.show()
 
 # 混淆矩阵
-def fig15():
+def fig14():
 
     plt.rcParams['font.family'] = 'Times New Roman'
     plt.rcParams.update({'font.size': 10})
@@ -670,11 +688,11 @@ def fig15():
 
     # 调整子图之间的间距
     plt.subplots_adjust(hspace=0.4, wspace=0.35)
-    save_path = "./fig/Fig15.png"
+    save_path = "./fig/Fig14.png"
     plt.savefig(save_path, dpi=300, bbox_inches='tight')
     plt.show()
 
-def fig16():
+def fig15():
     # 设置字体
     plt.rcParams.update({'font.family': 'Times New Roman', 'font.size': 10})
 
@@ -759,7 +777,7 @@ def fig16():
 
     # 调整布局并保存图像
     plt.tight_layout(pad=0.4)
-    save_path = "./fig/Fig16.png"
+    save_path = "./fig/Fig15.png"
     plt.savefig(save_path, dpi=300, bbox_inches='tight')  # 提高dpi以保持字体清晰
     plt.show()
 
