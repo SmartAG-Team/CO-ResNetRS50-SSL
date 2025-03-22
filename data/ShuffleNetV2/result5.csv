@@ -1,4 +1,4 @@
-Epoch,Train_Loss,Train_Acc,Val_Loss,Val_Acc,Test_Loss,Test_Acc,Test_Pre,Test_Recall,Test_F1,Test_1_Acc,Test_2_Acc,Test_3_Acc,Test_4_Acc,Test_5_Acc,Test_7_Acc,Test_8_Acc,Test_Confusion_Matrix,Hours
+Epoch,Train_Loss,Train_Acc,Val_Loss,Val_Acc,Test_Loss,Test_Acc,Test_Pre,Test_Recall,Test_F1,Test_1_Acc,Test_2_Acc,Test_3_Acc,Test_4_Acc,Test_5_Acc,Test_7_Acc,Test_8_Acc,Test_Confusion_Matrix,Model_Parameter
 1,1.2811,0.4947,1.1487,0.5529,None,None,None,None,None,None,None,None,None,None,None,None,None,1.26
 2,0.997,0.6215,0.8465,0.6692,None,None,None,None,None,None,None,None,None,None,None,None,None,1.26
 3,0.8707,0.6645,0.7834,0.6806,None,None,None,None,None,None,None,None,None,None,None,None,None,1.26
