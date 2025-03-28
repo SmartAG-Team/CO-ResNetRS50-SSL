@@ -33,6 +33,7 @@ def get_args():
 
 class WarmUpLR(_LRScheduler):
     def __init__(self, optimizer, total_iters, last_epoch=-1):
+
         self.total_iters = total_iters
         super().__init__(optimizer, last_epoch)
     
@@ -59,13 +60,14 @@ def main(args):
     optimizer = optim.SGD(model.parameters(), lr=args.learning_rate, weight_decay=5e-4, momentum=0.9)
     criterion = nn.CrossEntropyLoss().to(device)
 
-    print(f"Total parameters in the model: {count_parameters(model):,}")
+    # print(f"Total parameters in the model: {count_parameters(model):,}")
+    total_params = count_parameters(model) / 1e6  # 转换为M单位
+    print(f"Total parameters in the model: {total_params:.2f}M")
  
     best_val_accuracy = 0.0
     # 新增：创建CSV文件并写入列标题
     with open("./data/ResNetRS50_SSL/ssl_90/result.csv", "w") as f:
-        f.write("Epoch,Number_of_Unlabeled_Images,Train_Loss,Train_Acc,Val_Loss,Val_Acc,Test_Loss,Test_Acc,Test_Pre,Test_Recall,Test_F1,Test_1_Acc,Test_2_Acc,Test_3_Acc,Test_4_Acc,Test_5_Acc,Test_7_Acc,Test_8_Acc,Test_Confusion_Matrix\n")
-
+        f.write("Epoch,Number_of_Unlabeled_Images,Train_Loss,Train_Acc,Val_Loss,Val_Acc,Test_Loss,Test_Acc,Test_Pre,Test_Recall,Test_F1,Test_1_Acc,Test_2_Acc,Test_3_Acc,Test_4_Acc,Test_5_Acc,Test_7_Acc,Test_8_Acc,Test_Confusion_Matrix,Model_Parameter\n")
         total_difference = None        
         for epoch in range(1, args.epochs + 1):
             model.train()
@@ -120,10 +122,7 @@ def main(args):
 
             # 将结果写入CSV文件
             if epoch < args.epochs:
-                if args.ssl==False:
-                    f.write(f"{epoch},{average_train_loss:.4f},{average_train_accuracy:.4f},{average_val_loss:.4f},{average_val_accuracy:.4f},{None},{None},{None},{None},{None},{None},{None},{None},{None},{None},{None},{None},{None}\n")
-                else:
-                    f.write(f"{epoch},{total_difference},{average_train_loss:.4f},{average_train_accuracy:.4f},{average_val_loss:.4f},{average_val_accuracy:.4f},{None},{None},{None},{None},{None},{None},{None},{None},{None},{None},{None},{None},{None}\n")
+                f.write(f"{epoch},{total_difference},{average_train_loss:.4f},{average_train_accuracy:.4f},{average_val_loss:.4f},{average_val_accuracy:.4f},{None},{None},{None},{None},{None},{None},{None},{None},{None},{None},{None},{None},{None},{total_params:.2f}\n")
 
             if best_val_accuracy < average_val_accuracy:
                 print('Saving..')
@@ -222,7 +221,7 @@ def main(args):
 
         # 将结果写入CSV文件
         conf_matrix_str = np.array_str(conf_matrix).replace('\n', ' ')
-        f.write(f"{epoch},{total_difference},{average_train_loss:.4f},{average_train_accuracy:.4f},{average_val_loss:.4f},{average_val_accuracy:.4f},{average_test_loss:.4f},{average_test_accuracy:.4f},{average_test_precision:.4f},{average_test_recall:.4f},{average_test_f1:.4f},{accuracy_per_class[0]:.4f},{accuracy_per_class[1]:.4f},{accuracy_per_class[2]:.4f},{accuracy_per_class[3]:.4f},{accuracy_per_class[4]:.4f},{accuracy_per_class[5]:.4f},{accuracy_per_class[6]:.4f},{conf_matrix_str}\n")
+        f.write(f"{epoch},{total_difference},{average_train_loss:.4f},{average_train_accuracy:.4f},{average_val_loss:.4f},{average_val_accuracy:.4f},{average_test_loss:.4f},{average_test_accuracy:.4f},{average_test_precision:.4f},{average_test_recall:.4f},{average_test_f1:.4f},{accuracy_per_class[0]:.4f},{accuracy_per_class[1]:.4f},{accuracy_per_class[2]:.4f},{accuracy_per_class[3]:.4f},{accuracy_per_class[4]:.4f},{accuracy_per_class[5]:.4f},{accuracy_per_class[6]:.4f},{conf_matrix_str},{total_params:.2f}\n")
 
 
 if __name__ == '__main__':
